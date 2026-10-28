@@ -1,0 +1,15 @@
+Hidden Opportunity Vault — Countdown & Honest Agent Status Update
+
+WHAT IS NEW
+- Countdown HH:MM:SS to the next daily 09:23 UTC scan target, updated every second.
+- Green Agent Running only when a live connected scheduler reports a run less than 20 minutes old.
+- Green Agent Active after a recent successful completed scan, and warning for source failures or overdue runs.
+- Gray Not connected for the offline downloaded HTML; amber Setup required for sites without confirmed scheduling.
+- Automatic status polling every 60 seconds on hosted sites.
+- Status updates are published by the GitHub Actions workflow, at start and at completion.
+- 40 original category cards, 120 listings, 6 stacking recipes and Save/Export/Back remain unchanged.
+
+IMPORTANT
+The countdown alone is not an autonomous scanner. Until GitHub Pages/Actions are configured, no real daily scan runs. The live status requires connecting the hosting workflow. GitHub's scheduled runs are best effort and may be delayed. No unverified opportunities are automatically published.
+
+Deployment: GitHub Actions now explicitly publishes the live site status at scan start and again at completion. Select GitHub Actions as Pages Source.

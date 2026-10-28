@@ -1,0 +1,737 @@
+{
+  "format": "HOV-SOURCES-1",
+  "sources": [
+    {
+      "id": "feed_ftc_refunds",
+      "name": "FTC Consumer Protection",
+      "mode": "rss",
+      "url": "https://www.ftc.gov/feeds/press-release-consumer-protection.xml",
+      "allowed_hosts": [
+        "ftc.gov"
+      ],
+      "country": "United States",
+      "keywords": [
+        "refund",
+        "claim",
+        "redress",
+        "settlement",
+        "payment",
+        "compensation",
+        "reimbursement"
+      ]
+    },
+    {
+      "id": "feed_nasa",
+      "name": "NASA Official News",
+      "mode": "rss",
+      "url": "https://www.nasa.gov/feed/",
+      "allowed_hosts": [
+        "nasa.gov"
+      ],
+      "country": "United States",
+      "keywords": [
+        "challenge",
+        "competition",
+        "prize",
+        "fellowship",
+        "funding",
+        "apply",
+        "grant",
+        "free",
+        "student",
+        "opportunity"
+      ]
+    },
+    {
+      "id": "watch_hov001",
+      "name": "Coty Testing Institute",
+      "mode": "watch",
+      "url": "https://www.cotyinstitute.com/",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.cotyinstitute.com"
+      ]
+    },
+    {
+      "id": "watch_hov002",
+      "name": "Boots Volunteers",
+      "mode": "watch",
+      "url": "https://www.bootsvolunteers.com/what-we-do",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "www.bootsvolunteers.com"
+      ]
+    },
+    {
+      "id": "watch_hov005",
+      "name": "adidas Product Testing",
+      "mode": "watch",
+      "url": "https://producttesting.adidas.com/",
+      "country": "United States",
+      "allowed_hosts": [
+        "producttesting.adidas.com"
+      ]
+    },
+    {
+      "id": "watch_hov008",
+      "name": "SGS Clinical Studies",
+      "mode": "watch",
+      "url": "https://sgsclinicalstudies.com/",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "sgsclinicalstudies.com"
+      ]
+    },
+    {
+      "id": "watch_hov010",
+      "name": "CRC Research",
+      "mode": "watch",
+      "url": "https://www.crcresearch.com/en/participate",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.crcresearch.com"
+      ]
+    },
+    {
+      "id": "watch_hov011",
+      "name": "Canada Post Research Panel",
+      "mode": "watch",
+      "url": "https://www.canadapost-postescanada.ca/cpc/en/our-company/research-panel.page",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.canadapost-postescanada.ca"
+      ]
+    },
+    {
+      "id": "watch_hov014",
+      "name": "Google UX Research",
+      "mode": "watch",
+      "url": "https://userresearch.google.com/edu/",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "userresearch.google.com"
+      ]
+    },
+    {
+      "id": "watch_hov019",
+      "name": "EA Playtesting",
+      "mode": "watch",
+      "url": "https://www.ea.com/en-ca/playtesting",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "www.ea.com"
+      ]
+    },
+    {
+      "id": "watch_hov021",
+      "name": "PlayStation Beta Program",
+      "mode": "watch",
+      "url": "https://www.playstation.com/en-ca/beta-program-at-playstation/",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "www.playstation.com"
+      ]
+    },
+    {
+      "id": "watch_hov023",
+      "name": "1iota TV Audience Invitations",
+      "mode": "watch",
+      "url": "https://1iota.com/",
+      "country": "United States",
+      "allowed_hosts": [
+        "1iota.com"
+      ]
+    },
+    {
+      "id": "watch_hov024",
+      "name": "Toronto Public Library Cultural Pass",
+      "mode": "watch",
+      "url": "https://tpl.ca/using-the-library/services/map/",
+      "country": "Canada",
+      "allowed_hosts": [
+        "tpl.ca"
+      ]
+    },
+    {
+      "id": "watch_hov025",
+      "name": "Toronto Musical Instrument Lending",
+      "mode": "watch",
+      "url": "https://tpl.ca/using-the-library/services/borrow-a-musical-instrument/",
+      "country": "Canada",
+      "allowed_hosts": [
+        "tpl.ca"
+      ]
+    },
+    {
+      "id": "watch_hov027",
+      "name": "Montréal Borrow a Museum",
+      "mode": "watch",
+      "url": "https://montreal.ca/en/services/borrow-pass-library-to-visit-museums",
+      "country": "Canada",
+      "allowed_hosts": [
+        "montreal.ca"
+      ]
+    },
+    {
+      "id": "watch_hov029",
+      "name": "Canoo Parks Canada Access",
+      "mode": "watch",
+      "url": "https://parks.canada.ca/voyage-travel/admission/cultur",
+      "country": "Canada",
+      "allowed_hosts": [
+        "parks.canada.ca"
+      ]
+    },
+    {
+      "id": "watch_hov034",
+      "name": "Singapore Changi Free Tour",
+      "mode": "watch",
+      "url": "https://www.changiairport.com/en/experience/tours/free-singapore-tour.html",
+      "country": "Singapore",
+      "allowed_hosts": [
+        "www.changiairport.com"
+      ]
+    },
+    {
+      "id": "watch_hov037",
+      "name": "Delta Medallion Status Match",
+      "mode": "watch",
+      "url": "https://www.delta.com/us/en/skymiles/medallion-program/status-match-challenge",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.delta.com"
+      ]
+    },
+    {
+      "id": "watch_hov039",
+      "name": "U.S. Government Unclaimed Money Guide",
+      "mode": "watch",
+      "url": "https://www.usa.gov/unclaimed-money",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.usa.gov"
+      ]
+    },
+    {
+      "id": "watch_hov041",
+      "name": "Alberta Unclaimed Property",
+      "mode": "watch",
+      "url": "https://www.alberta.ca/unclaimed-property",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.alberta.ca"
+      ]
+    },
+    {
+      "id": "watch_hov044",
+      "name": "Brazil Valores a Receber",
+      "mode": "watch",
+      "url": "https://valoresareceber.bcb.gov.br/",
+      "country": "Brazil",
+      "allowed_hosts": [
+        "valoresareceber.bcb.gov.br"
+      ]
+    },
+    {
+      "id": "watch_hov047",
+      "name": "Nigeria E-Dividend Mandate",
+      "mode": "watch",
+      "url": "https://sec.gov.ng/for-investors/keep-track-of-circulars/revamped-e-dividend-mandate-management-system-portal/",
+      "country": "Nigeria",
+      "allowed_hosts": [
+        "sec.gov.ng"
+      ]
+    },
+    {
+      "id": "watch_hov051",
+      "name": "FTC Active Refund Programs",
+      "mode": "watch",
+      "url": "https://www.ftc.gov/enforcement/refunds",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.ftc.gov"
+      ]
+    },
+    {
+      "id": "watch_hov055",
+      "name": "Apple Trade In and Recycling",
+      "mode": "watch",
+      "url": "https://www.apple.com/ca/recycling/",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.apple.com"
+      ]
+    },
+    {
+      "id": "watch_hov059",
+      "name": "NASA Orbital Clarity Challenge",
+      "mode": "watch",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.nasa.gov"
+      ]
+    },
+    {
+      "id": "watch_hov063",
+      "name": "Smithsonian Artist Research Fellowships",
+      "mode": "watch",
+      "url": "https://fellowships.si.edu/SARF",
+      "country": "United States",
+      "allowed_hosts": [
+        "fellowships.si.edu"
+      ]
+    },
+    {
+      "id": "watch_hov068",
+      "name": "AWS Activate Startup Credits",
+      "mode": "watch",
+      "url": "https://aws.amazon.com/startups/credits",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "aws.amazon.com"
+      ]
+    },
+    {
+      "id": "watch_hov073",
+      "name": "Ontario Small Business Legal Support",
+      "mode": "watch",
+      "url": "https://www.ontario.ca/page/business/start/get-funding-or-more-help",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.ontario.ca"
+      ]
+    },
+    {
+      "id": "watch_hov078",
+      "name": "Brampton Community Grants and Support",
+      "mode": "watch",
+      "url": "https://www.brampton.ca/EN/Business/BEC/Pages/GrantsFunding.aspx",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.brampton.ca"
+      ]
+    },
+    {
+      "id": "watch_hov083",
+      "name": "Treat At-Home Pet Studies",
+      "mode": "watch",
+      "url": "https://treatx.bio/",
+      "country": "United States",
+      "allowed_hosts": [
+        "treatx.bio"
+      ]
+    },
+    {
+      "id": "watch_hov013",
+      "name": "Trybers Product Tests",
+      "mode": "watch",
+      "url": "https://www.trybers.com/",
+      "country": "Netherlands",
+      "allowed_hosts": [
+        "www.trybers.com"
+      ]
+    },
+    {
+      "id": "watch_hov028",
+      "name": "Nashville Library of Things",
+      "mode": "watch",
+      "url": "https://www.library.nashville.org/services/library-things",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.library.nashville.org"
+      ]
+    },
+    {
+      "id": "watch_hov030",
+      "name": "National Parks Volunteer Pass",
+      "mode": "watch",
+      "url": "https://www.nps.gov/articles/000/250-for-250.htm",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.nps.gov"
+      ]
+    },
+    {
+      "id": "watch_hov031",
+      "name": "Turkish Airlines Stopover Hotel",
+      "mode": "watch",
+      "url": "https://www.turkishairlines.com/en-ca/flights/stopover/",
+      "country": "Turkey",
+      "allowed_hosts": [
+        "www.turkishairlines.com"
+      ]
+    },
+    {
+      "id": "watch_hov032",
+      "name": "Etihad Abu Dhabi Stopover",
+      "mode": "watch",
+      "url": "https://www.etihad.com/en-us/abu-dhabi/stopover",
+      "country": "United Arab Emirates",
+      "allowed_hosts": [
+        "www.etihad.com"
+      ]
+    },
+    {
+      "id": "watch_hov033",
+      "name": "Qatar Airways Transit Accommodation",
+      "mode": "watch",
+      "url": "https://www.qatarairways.com/en/help/transit-accommodation-v4.html",
+      "country": "Qatar",
+      "allowed_hosts": [
+        "www.qatarairways.com"
+      ]
+    },
+    {
+      "id": "watch_hov035",
+      "name": "Changi Transit Privileges",
+      "mode": "watch",
+      "url": "https://www.changiairport.com/en/experience/transit/transit-dapat-lebih.html",
+      "country": "Singapore",
+      "allowed_hosts": [
+        "www.changiairport.com"
+      ]
+    },
+    {
+      "id": "watch_hov036",
+      "name": "United Premier Status Match",
+      "mode": "watch",
+      "url": "https://promo.united.com/statusmatch/?env=prd&pid=SM2026",
+      "country": "United States",
+      "allowed_hosts": [
+        "promo.united.com"
+      ]
+    },
+    {
+      "id": "watch_hov038",
+      "name": "Bank of Canada Unclaimed Balances",
+      "mode": "watch",
+      "url": "https://www.unclaimedproperties.bankofcanada.ca/app/claim-search",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.unclaimedproperties.bankofcanada.ca"
+      ]
+    },
+    {
+      "id": "watch_hov040",
+      "name": "U.S. NAIC Insurance Locator",
+      "mode": "watch",
+      "url": "https://content.naic.org/article/naic-life-insurance-policy-locator-tool-helps-match-consumers-more-16-billion-lost-and-unclaimed",
+      "country": "United States",
+      "allowed_hosts": [
+        "content.naic.org"
+      ]
+    },
+    {
+      "id": "watch_hov043",
+      "name": "Australia Unclaimed Money Search",
+      "mode": "watch",
+      "url": "https://moneysmart.gov.au/find-unclaimed-money",
+      "country": "Australia",
+      "allowed_hosts": [
+        "moneysmart.gov.au"
+      ]
+    },
+    {
+      "id": "watch_hov045",
+      "name": "South Africa Unclaimed Benefits",
+      "mode": "watch",
+      "url": "https://www.fsca.co.za/Unclaimed-Benefits-Search/",
+      "country": "South Africa",
+      "allowed_hosts": [
+        "www.fsca.co.za"
+      ]
+    },
+    {
+      "id": "watch_hov046",
+      "name": "India RBI UDGAM",
+      "mode": "watch",
+      "url": "https://udgam.rbi.org.in/unclaimed-deposits/#/login",
+      "country": "India",
+      "allowed_hosts": [
+        "udgam.rbi.org.in"
+      ]
+    },
+    {
+      "id": "watch_hov048",
+      "name": "UK Unclaimed Estates Register",
+      "mode": "watch",
+      "url": "https://www.gov.uk/government/statistical-data-sets/unclaimed-estates-list",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "www.gov.uk"
+      ]
+    },
+    {
+      "id": "watch_hov050",
+      "name": "The MLC Artist Lookup",
+      "mode": "watch",
+      "url": "https://www.durp.themlc.com/artist-lookup",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.durp.themlc.com"
+      ]
+    },
+    {
+      "id": "watch_hov052",
+      "name": "UK Broadband Auto Compensation",
+      "mode": "watch",
+      "url": "https://www.ofcom.org.uk/phones-and-broadband/service-quality/automatic-compensation-need-know",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "www.ofcom.org.uk"
+      ]
+    },
+    {
+      "id": "watch_hov053",
+      "name": "UK Electricity Outage Compensation",
+      "mode": "watch",
+      "url": "https://www.ofgem.gov.uk/your-energy-supply/problems-your-energy-supply/check-if-you-can-get-payment-power-cut",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "www.ofgem.gov.uk"
+      ]
+    },
+    {
+      "id": "watch_hov056",
+      "name": "NASA Software Catalog",
+      "mode": "watch",
+      "url": "https://software.nasa.gov/",
+      "country": "United States",
+      "allowed_hosts": [
+        "software.nasa.gov"
+      ]
+    },
+    {
+      "id": "watch_hov057",
+      "name": "NASA Technology Startup Licensing",
+      "mode": "watch",
+      "url": "https://technology.nasa.gov/license",
+      "country": "United States",
+      "allowed_hosts": [
+        "technology.nasa.gov"
+      ]
+    },
+    {
+      "id": "watch_hov058",
+      "name": "NASA ORBIT Challenge 2027",
+      "mode": "watch",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-orbit-challenge-2027/",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.nasa.gov"
+      ]
+    },
+    {
+      "id": "watch_hov060",
+      "name": "ESA Open Space Innovation Platform",
+      "mode": "watch",
+      "url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/The_Open_Space_Innovation_Platform_OSIP",
+      "country": "Europe",
+      "allowed_hosts": [
+        "www.esa.int"
+      ]
+    },
+    {
+      "id": "watch_hov061",
+      "name": "InnoCentive Open Challenges",
+      "mode": "watch",
+      "url": "https://www.innocentive.com/challenges/",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "www.innocentive.com"
+      ]
+    },
+    {
+      "id": "watch_hov062",
+      "name": "Culture Moves Europe Mobility",
+      "mode": "watch",
+      "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
+      "country": "Europe",
+      "allowed_hosts": [
+        "culture.ec.europa.eu"
+      ]
+    },
+    {
+      "id": "watch_hov064",
+      "name": "Brampton Writer in Residence",
+      "mode": "watch",
+      "url": "https://bramptonartsorg.ca/opportunities/open-calls/",
+      "country": "Canada",
+      "allowed_hosts": [
+        "bramptonartsorg.ca"
+      ]
+    },
+    {
+      "id": "watch_hov065",
+      "name": "Ontario Government Funding Opportunities",
+      "mode": "watch",
+      "url": "https://www.ontario.ca/page/available-funding-opportunities-ontario-government",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.ontario.ca"
+      ]
+    },
+    {
+      "id": "watch_hov067",
+      "name": "Innovation Canada Business Benefits",
+      "mode": "watch",
+      "url": "https://innovation.canada.ca/",
+      "country": "Canada",
+      "allowed_hosts": [
+        "innovation.canada.ca"
+      ]
+    },
+    {
+      "id": "watch_hov069",
+      "name": "IBM SkillsBuild Free Credentials",
+      "mode": "watch",
+      "url": "https://www.skillsbuild.org/",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "www.skillsbuild.org"
+      ]
+    },
+    {
+      "id": "watch_hov070",
+      "name": "Microsoft Learn",
+      "mode": "watch",
+      "url": "https://www.microsoft.com/en-ca/microsoft-learn",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "www.microsoft.com"
+      ]
+    },
+    {
+      "id": "watch_hov072",
+      "name": "YESNet Digital Upskilling",
+      "mode": "watch",
+      "url": "https://www.yes.on.ca/yesnetdigital/",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.yes.on.ca"
+      ]
+    },
+    {
+      "id": "watch_hov074",
+      "name": "Ontario Home Energy Savings",
+      "mode": "watch",
+      "url": "https://www.saveonenergy.ca/For-Your-Home",
+      "country": "Canada",
+      "allowed_hosts": [
+        "www.saveonenergy.ca"
+      ]
+    },
+    {
+      "id": "watch_hov077",
+      "name": "DiscoverEU Youth Travel",
+      "mode": "watch",
+      "url": "https://youth.europa.eu/discovereu_en",
+      "country": "Europe",
+      "allowed_hosts": [
+        "youth.europa.eu"
+      ]
+    },
+    {
+      "id": "watch_hov080",
+      "name": "Purina UK Your Purina Tester Panel",
+      "mode": "watch",
+      "url": "https://www.purina.co.uk/your-purina",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "www.purina.co.uk"
+      ]
+    },
+    {
+      "id": "watch_hov081",
+      "name": "Vista Pets Home Tester Panel",
+      "mode": "watch",
+      "url": "https://vista-pets.com/en",
+      "country": "Europe",
+      "allowed_hosts": [
+        "vista-pets.com"
+      ]
+    },
+    {
+      "id": "watch_hov082",
+      "name": "PetSafe Product Testing Panel",
+      "mode": "watch",
+      "url": "https://www.petsafe.com/about-us/joinpanel",
+      "country": "United States",
+      "allowed_hosts": [
+        "www.petsafe.com"
+      ]
+    },
+    {
+      "id": "watch_hov084",
+      "name": "Animora Pet Tester Program",
+      "mode": "watch",
+      "url": "https://animora.ca/en/animora-tester-program/",
+      "country": "Canada",
+      "allowed_hosts": [
+        "animora.ca"
+      ]
+    },
+    {
+      "id": "watch_hov085",
+      "name": "Shanzi Naturals Pet Testers",
+      "mode": "watch",
+      "url": "https://shanzinaturals.co.uk/pages/shanzi-naturals-product-testers-apply-to-test-natural-pet-products",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "shanzinaturals.co.uk"
+      ]
+    },
+    {
+      "id": "watch_hov086",
+      "name": "Symrise Panelis Pet Owner Research",
+      "mode": "watch",
+      "url": "https://petfood.symrise.com/what-we-offer/palatability-measurement-with-panelis/",
+      "country": "Worldwide",
+      "allowed_hosts": [
+        "petfood.symrise.com"
+      ]
+    },
+    {
+      "id": "watch_perks2026_005",
+      "name": "Tesco Clubcard — 2× Reward Partner Value",
+      "mode": "watch",
+      "url": "https://www.tesco.com/help/pages/clubcard-faqs/clubcard-reward-partners/using-clubcard-vouchers-with-reward-partners",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "www.tesco.com"
+      ]
+    },
+    {
+      "id": "watch_perks2026_009",
+      "name": "Lidl Plus — Redeem Points for Free Items or Coupons",
+      "mode": "watch",
+      "url": "https://www.lidl.co.uk/c/lidl-plus-points/s10093518",
+      "country": "United Kingdom",
+      "allowed_hosts": [
+        "www.lidl.co.uk"
+      ]
+    },
+    {
+      "id": "watch_perks2026_012",
+      "name": "Australian OnePass — Free Delivery Across Retailers",
+      "mode": "watch",
+      "url": "https://onepass.com.au/benefits",
+      "country": "Australia",
+      "allowed_hosts": [
+        "onepass.com.au"
+      ]
+    },
+    {
+      "id": "watch_perks2026_014",
+      "name": "GrabCoins — Cross-Service Rewards in Southeast Asia",
+      "mode": "watch",
+      "url": "https://www.grab.com/inside-grab/stories/grabrewards-grabcoins-earn-savings-redeem/",
+      "country": "Asia",
+      "allowed_hosts": [
+        "www.grab.com"
+      ]
+    }
+  ],
+  "editorial_policy": "public original sources only, monitor changes and collect leads; no automatic publication"
+}

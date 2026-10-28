@@ -1,0 +1,10 @@
+{
+  "format": "HOV-AGENT-1",
+  "generated_at": "",
+  "sources_scanned": 0,
+  "sources_configured": 71,
+  "new_candidates": 0,
+  "failures": [],
+  "candidates": [],
+  "disclaimer": "Scanner has not yet run. Configure and enable scheduler."
+}

@@ -1,0 +1,23 @@
+AGENT DIGITAL CLOCK — NEW
+=========================
+
+WHAT YOU WILL SEE
+1. Select Daily Agent in the left navigation or top utility bar.
+2. A small dark digital clock shows live local time, date and local zone.
+3. The display updates every second and adapts to the selected language.
+4. Beneath the clock, the scheduled scan window is stated as 09:23 UTC
+   (best effort, after activating the supplied GitHub Actions workflow).
+5. Last scan data is shown separately and remains blank until the agent
+   has actually generated and loaded a report.
+
+IMPORTANT
+The digital clock operates in the offline HTML file. It does not make
+the Daily Agent run automatically. For unattended scans, use AGENT_SETUP.txt
+to deploy and enable the scheduled workflow. Review candidate discoveries
+before publishing them.
+
+QA
+Browser tested: 40 cards present, 120 records preserved, 1+ populated
+category, Back, Save Backup download, Export menu, language changes
+(en/fr/es/pt/de/ar), second-by-second time update, desktop/mobile width,
+and no JavaScript runtime errors in the test sessions.

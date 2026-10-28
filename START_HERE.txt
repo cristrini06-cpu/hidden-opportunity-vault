@@ -1,0 +1,56 @@
+HIDDEN OPPORTUNITY VAULT — GLOBAL POWERHOUSE EDITION
+
+OPEN THE WEBSITE NOW (no installation):
+1. Extract the entire ZIP folder.
+2. Double-click Hidden_Opportunity_Vault_POWERHOUSE.html.
+3. All 40 colorful department cards and 120 curated source-linked listings remain.
+4. The new buttons directly below search: BACK, BACK TO TOP, SAVE BACKUP, EXPORT, DAILY AGENT.
+5. In the Export menu: full catalogue CSV, saved opportunities CSV, application tracker CSV, JSON backup, approved local listings JSON, print/PDF.
+
+YOUR DATA:
+- Save/unsave from every opportunity card and details panel.
+- 'Save Backup' downloads a JSON copy to your computer; save it somewhere safe.
+- Your live browser session saves to local storage automatically, for the same browser/device.
+- The earlier HOV browser storage key is maintained so existing local data still loads.
+
+DAILY AGENT:
+- 'Daily Agent' opens a review board. It cannot scan sources by itself inside an offline HTML file.
+- The ZIP contains a REAL Python discovery monitor, source registry and a daily GitHub Actions schedule.
+- It checks approved RSS feeds and selected official program pages for new or changed content.
+- Findings are leads requiring human verification, NOT verified offers.
+- To activate automatic daily updates for a public website, follow AGENT_SETUP.txt.
+- For an offline desktop: run the Python script manually (requires Python), then click 'Import Agent Report' in the website.
+- 'Load Latest Report' reads agent/data/discoveries.json from a hosted version of the site. It does not trigger an instant web crawl.
+
+IMPORTANT BUSINESS LIMITATIONS:
+- This HTML file is not an always-on SaaS. The scanner runs daily only after publishing to your own GitHub repository and enabling Actions.
+- The scanner checks only the configured source registry, not the entire internet.
+- GitHub public repository and Pages setup may expose site source. Do not store private customer data, credentials or unreleased partner benefits in that public repository.
+- The public customer catalogue is not automatically filled from unverified bot leads. Use the editor and manual approval flow.
+- Commercial launch requires review of offer eligibility, consent, privacy, legal compliance, source rights, commercial operations, and appropriate monitoring resources.
+
+See AGENT_SETUP.txt and QA_REPORT.txt for exact details.
+
+
+OCTOBER 28, 2026 — DAILY AGENT DIGITAL CLOCK UPDATE
+-------------------------------------------------
+Open Hidden_Opportunity_Vault_POWERHOUSE.html and choose Daily Agent.
+The new compact digital clock shows your device's current local time,
+date and time-zone abbreviation. It updates each second.
+The Agent screen also displays the intended daily scan slot: 09:23 UTC.
+This is a scheduling TARGET, not a confirmation that scans are active.
+GitHub scheduling must still be activated as described in AGENT_SETUP.txt.
+The existing Last Scan (UTC) report field displays genuine scan data only.
+The website has not started scanning or publishing by itself.
+
+All 40 departments, 120 records, save/export/back controls and daily
+agent report review features are preserved.
+
+NEW: Agent countdown and live scan indicator
+Daily Agent now shows a seconds-accurate countdown to the scheduled 09:23 UTC scan and an honest scan status.
+Opening the HTML locally will show Not connected; an actual configured and running scheduler is required for a green Agent Running status.
+See AGENT_SETUP.txt for deployment details.
+
+OCTOBER 28, 2026 — HOMEPAGE NEW-DISCOVERY INDICATOR
+----------------------------------------------------
+A prominently visible "Opportunity Discovery Signal" has been added to Home, immediately under the main purple introduction panel. Customers can now see whether new discoveries are under review or recently published, without opening Daily Agent. Select "View discoveries" to see new published opportunities or "Browse all opportunities" for the complete Vault. The separate lead counter does not certify an offer. When the scanner is not connected, the homepage says so. See HOMEPAGE_DISCOVERY_UPDATE.txt for full details.

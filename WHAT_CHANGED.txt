@@ -1,0 +1,43 @@
+UPGRADE FROM: Hidden_Opportunity_Vault_GLOBAL_EXPANDED_COMPLETE.zip
+
+PRESERVED:
+- All 40 original colorful department cards, hover effects and every existing department.
+- All 120 curated source-linked listings, hidden-perks spotlight and 6 stack recipes.
+- Existing search, filter, category dropdown, saving items, tracked applications, local catalogue editor, import/export, profile matching and languages.
+- Existing browser storage key HOV_GLOBAL_2026_V1 for compatibility.
+
+RESTORED/ADDED TO EVERY PAGE:
+- BACK: returns to the previous view; when a modal is open, closes the modal.
+- BACK TO TOP: scrolls to the beginning of the page.
+- SAVE BACKUP: downloads a JSON workspace backup.
+- EXPORT: catalogue CSV, saved CSV, application CSV, JSON backup, approved-list JSON, Print/Save PDF.
+- The same useful actions at the bottom of every page.
+
+DAILY DISCOVERY AGENT:
+- New Agent navigation page with report status, candidate lists, source links, review and dismiss.
+- Import report offline or load latest hosted report.
+- Full standalone standard-library Python scanner; 71 monitored sources (2 RSS, 69 official/belonging-to-provider pages).
+- Domain allowlists, freshness filtering, deduplication, source error logging, baseline page-change analysis.
+- Scheduled GitHub Actions workflow provided, one daily run at 09:23 UTC, requires account setup.
+- Candidate queue is editorial-only and does not silently push unverified offers to customers.
+- Separate publish file agent/data/approved.json can extend the hosted catalogue after review.
+- Windows runner for an on-demand local scan, requires Python installed.
+
+HONEST LIMITATION:
+- The scan does not start automatically when you download the ZIP. Automation requires an online scheduler and hosting setup.
+- The scan is not a general-purpose autonomous AI agent or global live web crawler. It watches the supplied source registry and queues leads.
+
+
+OCTOBER 28, 2026 — DAILY AGENT DIGITAL CLOCK UPDATE
+-------------------------------------------------
+Open Hidden_Opportunity_Vault_POWERHOUSE.html and choose Daily Agent.
+The new compact digital clock shows your device's current local time,
+date and time-zone abbreviation. It updates each second.
+The Agent screen also displays the intended daily scan slot: 09:23 UTC.
+This is a scheduling TARGET, not a confirmation that scans are active.
+GitHub scheduling must still be activated as described in AGENT_SETUP.txt.
+The existing Last Scan (UTC) report field displays genuine scan data only.
+The website has not started scanning or publishing by itself.
+
+All 40 departments, 120 records, save/export/back controls and daily
+agent report review features are preserved.

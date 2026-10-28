@@ -1,0 +1,29 @@
+HIDDEN OPPORTUNITY VAULT - COUNTDOWN & AGENT STATUS QA
+2026-10-28
+
+PASSED browser simulations:
+- 40 department cards visible and retained
+- Live digital clock and HH:MM:SS scheduled scan countdown update
+- Countdown label translates across English, French, Spanish, Portuguese, German, Arabic
+- Agent Running shows green only with recent running status
+- Agent Active shows green only after recent completed scan with sources checked
+- Scan source errors show amber; failures show red; stale runs show warning
+- Status unavailable does not display green
+- Back navigation, Save Backup and Export dialog
+- Mobile Agent clock, status and countdown visible without horizontal overflow
+- No JavaScript runtime errors in browser test
+
+PASSED backend tests:
+- status.py start -> running with timestamp
+- status.py finish success -> complete with scan figures
+- status.py finish failure -> failed
+- Python syntax and GitHub Actions YAML schema parsed
+
+LIMITATIONS:
+- Local browser policy blocked direct file:// or http:// URL navigation in automated browser testing;
+  browser rendering tests used browser-set HTML, and simulated status payloads.
+- Actual GitHub Pages deployments and internet scans were not run here because the user's repository has not been connected.
+- The countdown is a planned schedule, not proof that a scan will run at precisely that second.
+- The workflow now explicitly uploads and deploys Pages artifacts at scan start and completion,
+  but production behavior requires a user-owned GitHub repository with Pages Source set to GitHub Actions.
+- No new opportunities are automatically verified or published.

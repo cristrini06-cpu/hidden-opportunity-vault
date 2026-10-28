@@ -1,0 +1,36 @@
+HIDDEN OPPORTUNITY VAULT — HOMEPAGE DISCOVERY SIGNAL
+28 October 2026
+
+WHAT HAS CHANGED
+----------------
+1. A new "Opportunity Discovery Signal" is directly beneath the main homepage banner, above the department cards.
+2. Shows two distinct counters:
+   - Recently added (14 days): published catalogue listings that explicitly carry a recent published_at date.
+   - Leads awaiting review: un-dismissed candidate discoveries from the agent report.
+3. Its heading changes when new leads arrive, when newly published listings appear, or when both are present.
+4. Shows the last confirmed scan time, or clearly says no completed scan has been confirmed.
+5. "View discoveries" opens a new page of recently published opportunities. Leads requiring verification are deliberately not passed off as confirmed perks.
+6. "Browse all opportunities" opens the full existing Vault.
+7. Supports English, French, Spanish, Portuguese, German and Arabic; responsive on mobile and desktop.
+
+WHERE TO SEE IT
+---------------
+Open Hidden_Opportunity_Vault_POWERHOUSE.html and look below the large purple introduction banner.
+No separate Agent click is needed to see that new leads have arrived.
+
+HOW IT UPDATES
+--------------
+Local/offline: data remains in this browser. Import an Agent report in the Daily Agent screen, then return Home. The homepage counter updates. Offline use does not perform live scanning.
+Hosted: after deploying the included agent files and enabling the scheduler, the homepage can load agent/data/discoveries.json, agent/data/agent_status.json, and agent/data/approved.json. It checks them periodically while the site remains open.
+
+To count a newly published opportunity, approved catalogue records must include an actual "published_at" ISO date from the publication event (e.g. 2026-10-28T14:30:00Z). Do not backdate or add fake dates; review dates are deliberately not treated as publication events. The local listing editor stamps newly created published listings.
+
+CRITICAL STATUS CLARIFICATION
+-----------------------------
+The agent has NOT been activated by downloading this ZIP.
+The included status file deliberately says not_configured, and the discovery report starts with zero candidates.
+Controlled QA uses simulated data ONLY; no simulated discoveries have been added to the actual customer database.
+The homepage never claims that a detected candidate is a verified deal.
+A public production site needs editorial review procedures and authentication for administrative tools.
+
+All 40 department cards, 120 existing source-linked listings, Save, Export, Back, Back to Top, Agent countdown, and the original source-monitoring files remain in this edition.

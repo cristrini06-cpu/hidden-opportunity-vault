@@ -1,0 +1,68 @@
+HIDDEN OPPORTUNITY VAULT — POWERHOUSE EDITION
+QA SUMMARY / OCT 28, 2026
+
+CURRENT CATALOGUE
+- 40 visible colorful department cards, all retain their old labels and category content.
+- 120 built-in source-linked listings; no preexisting listing was removed.
+- 6 stacking guides, existing Hidden Perks Spotlight, existing 6 language selector.
+- New sticky Back / Back to Top / Save Backup / Export / Daily Agent controls, repeated at the bottom of long pages.
+
+BROWSER QA (CHROMIUM, HEADLESS; the HTML was injected from local source due browser navigation restrictions)
+20/20 targeted checks passed:
+- Home and card visibility
+- Five header controls present
+- Correct unloaded-agent state
+- All 40 category buttons open populated lists; Back returns home
+- Back to Top scrolls to the top
+- Save Backup causes a JSON download
+- Export menu opens and CSV exports download
+- Save an item and see it in the Saved section
+- Agent review warning appears
+- Import a controlled report
+- Review a finding opens the editor with reference-only status
+- Dismiss a finding removes it from the queue
+- Spanish controls and Arabic RTL
+- Mobile sidebar, agent navigation, and Back
+- No uncaught JavaScript exceptions
+
+ADDITIONAL HOSTED-LOGIC TEST (MOCKED FETCH)
+- JSON report ingest: one candidate loaded into the review queue.
+- Public approved.json: one reviewed record added to catalogue.
+- Reference-only draft did not publish.
+- No browser exceptions during the mocked integration.
+
+BOT UNIT TEST (CONTROLLED RSS/HTML FIXTURES)
+- Parse legitimate official RSS candidate.
+- Exclude source links outside the trusted domain.
+- Exclude expired/out-of-window dated feed item.
+- First scan stores baseline for official webpage without claiming an opportunity.
+- Repeat scan avoids duplicate candidates.
+- Page modification creates 'page changed' candidate for human verification.
+- Report/state JSON persistence.
+- Python syntax validated.
+
+NOT TESTED OR CLAIMED
+- The daily GitHub workflow has NOT been activated on a real account.
+- The 71 configured public sources have NOT been checked end-to-end over the internet in this build session.
+- Source accessibility, robots restrictions, regional availability, rates, and offer status need ongoing validation.
+- No real-time worldwide crawler, no automatic email or push alerts, no customer account syncing.
+- Browser local storage can differ by browser/file security; keep downloaded backups.
+- Publishing a local listing publicly requires manually replacing agent/data/approved.json in your hosted repository.
+
+REMAINING PRODUCTION REQUIREMENTS
+- Deploy under an owned account/domain; configure scheduled workflow and verify first actual source scan.
+- Review program data and correctness, expiry, privacy, legal obligations and source-use permissions.
+- Add authenticated admin and multi-user backend for a public commercial SaaS if those features are needed.
+- Run site-specific production monitoring, automated regression and accessibility tests.
+
+
+CLOCK UPDATE QA (Oct 28, 2026)
+- Desktop/mobile live time rendering: PASS
+- Clock seconds change over time: PASS
+- Local date/timezone shown: PASS (America/Toronto simulation)
+- Six-language clock labels: PASS
+- Department cards: 40 present; 120 records preserved
+- Back, Save Backup download, Export menu: PASS
+- Mobile horizontal overflow: none detected in 390px viewport
+- Runtime page errors in browser tests: none
+- Live external scheduled-scanner execution: NOT TESTED / requires deployment

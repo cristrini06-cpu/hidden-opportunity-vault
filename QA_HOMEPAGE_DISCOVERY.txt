@@ -1,0 +1,21 @@
+HIDDEN OPPORTUNITY VAULT — HOMEPAGE DISCOVERY QA
+28 October 2026
+
+Test platform: Chromium headless; real HTML application script, 1430px desktop and 390px mobile render.
+
+PASS: Homepage signal visible immediately below the introduction, above all department cards.
+PASS: Unconfigured scanner initial state — 0 newly published and 0 candidates; no false "new deals" notification.
+PASS: Simulated scanner report with 3 unverified discoveries — headline states they are under review, counter reads 3.
+PASS: New discoveries link opens dedicated page; no unverified lead is displayed as a confirmed public offer.
+PASS: Simulated recently published record with true publication timestamp — new-listing count reads 1 and actual listing card appears.
+PASS: Back navigation returns from discoveries page to homepage.
+PASS: Save Backup downloads JSON; Export menu opens and remains functional.
+PASS: All 40 coloured department cards open populated categories.
+PASS: Discovery banner translations exercised in EN, FR, ES, PT, DE and AR.
+PASS: Mobile at 390px — no horizontal overflow.
+PASS: Simulated hosted status/reports/catalogue synchronisation updates homepage counters to 1 published, 1 candidate, with last scan confirmed.
+PASS: Chromium page-level JavaScript errors: none in final browser test.
+PASS: JS static syntax check and ZIP integrity check.
+
+All scanner reports used in QA were synthetic and in-memory; they were not shipped as real new customer opportunities.
+Daily live scanning remains unavailable until online deployment and scheduler activation.
