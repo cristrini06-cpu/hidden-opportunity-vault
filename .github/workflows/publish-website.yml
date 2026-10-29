@@ -1,0 +1,39 @@
+name: Publish Verified Website
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'Hidden_Opportunity_Vault_POWERHOUSE.html'
+      - 'OPEN_HIDDEN_OPPORTUNITY_VAULT.html'
+      - 'agent/data/approved.json'
+      - '.github/workflows/publish-website.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: hov-pages-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate approved listings
+        run: python tools/validate_approved.py
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: '.'
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
