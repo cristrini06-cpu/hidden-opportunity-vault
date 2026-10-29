@@ -315,14 +315,7 @@
       "country": "Canada",
       "allowed_hosts": [
         "www.brampton.ca"
-      ],
-      "discover_links": true,
-      "discovery_terms": [
-        "grant",
-        "funding",
-        "application"
-      ],
-      "max_directory_candidates": 8
+      ]
     },
     {
       "id": "watch_hov083",
@@ -553,13 +546,7 @@
       "allowed_hosts": [
         "www.innocentive.com"
       ],
-      "discover_links": true,
-      "discovery_terms": [
-        "challenge",
-        "prize",
-        "competition"
-      ],
-      "max_directory_candidates": 8
+      "discovery_strategy": "innocentive_active_challenges"
     },
     {
       "id": "watch_hov062",
@@ -569,15 +556,7 @@
       "country": "Europe",
       "allowed_hosts": [
         "culture.ec.europa.eu"
-      ],
-      "discover_links": true,
-      "discovery_terms": [
-        "mobility",
-        "call",
-        "application",
-        "grant"
-      ],
-      "max_directory_candidates": 8
+      ]
     },
     {
       "id": "watch_hov064",
@@ -588,15 +567,7 @@
       "allowed_hosts": [
         "bramptonartsorg.ca"
       ],
-      "discover_links": true,
-      "discovery_terms": [
-        "open call",
-        "application",
-        "residency",
-        "fellowship",
-        "grant"
-      ],
-      "max_directory_candidates": 8
+      "discovery_strategy": "bao_current_fund"
     },
     {
       "id": "watch_hov065",
@@ -606,15 +577,7 @@
       "country": "Canada",
       "allowed_hosts": [
         "www.ontario.ca"
-      ],
-      "discover_links": true,
-      "discovery_terms": [
-        "funding",
-        "grant",
-        "application",
-        "program"
-      ],
-      "max_directory_candidates": 8
+      ]
     },
     {
       "id": "watch_hov067",

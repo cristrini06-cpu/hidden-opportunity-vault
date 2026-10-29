@@ -290,44 +290,127 @@ class OpportunityLinkExtractor(HTMLParser):
             self.text.append(data)
 
 
-def directory_candidates(raw, source, now, final_url):
-    """Cautiously surface *links* from approved official directories.
+# Whitelisted page formats: extract a SPECIFIC named opportunity with evidence.
+# A generic link to a directory, guide, old award, or site navigation is not a lead.
+NON_OPPORTUNITY_TITLE = re.compile(
+    r'^(?:grants? (?:and|&) funding|apply for funding|funding opportunities|'
+    r'available funding opportunities|past funding opportunities|'
+    r'site readiness program guide\.?|open calls?|current calls?|'
+    r'request a challenge|view (?:closed )?challenge|view challenges|'
+    r'learn about.*|see (?:all|more).*|browse.*|apply now|'
+    r'how to apply|funding programs?|all programs|benefits?|'
+    r'upcoming challenges|closed challenges)$', re.I)
 
-    No event opening, validity or deadline is inferred. Does not follow links.
-    A qualified editor must visit the original program and verify applicability.
+
+def parse_closing_date(label):
+    label = re.sub(r'(\d)(st|nd|rd|th)\b', r'\1', label.strip(), flags=re.I)
+    for fmt in ('%d %b %Y', '%d %B %Y'):
+        try:
+            return dt.datetime.strptime(label, fmt).date()
+        except ValueError:
+            pass
+    return None
+
+
+def specific_title(text):
+    text = re.sub(r'\s+', ' ', text).strip()
+    return (24 <= len(text) <= 165 and len(text.split()) >= 4
+            and not NON_OPPORTUNITY_TITLE.match(text)
+            and not match(r'\b(closed|past|expired|under evaluation|results|winners?|'
+                          r'blog|articles?|guide|learn about|request a challenge)\b', text))
+
+
+def active_innocentive_challenges(raw, source, now, final_url):
+    """Read the current *named* challenge list, never site-navigation labels.
+
+    A named challenge needs an adjacent future Closing date AND stated Award.
+    No assumption is made that any visitor meets the challenge eligibility.
     """
-    extractor=OpportunityLinkExtractor()
-    try: extractor.feed(raw.decode('utf8', errors='replace'))
+    page = raw.decode('utf-8', errors='replace')
+    visible = text_only(page)
+    boundary = re.search(r'\bUnder Evaluation Challenges\b', visible, re.I)
+    if boundary:
+        visible = visible[:boundary.start()]
+    if not match(r'\bClosing date\s*:', visible) or not match(r'\bAward\s*:', visible):
+        return []
+    parser = OpportunityLinkExtractor()
+    try: parser.feed(page)
     except Exception: return []
-    terms=source.get('discovery_terms', [])
-    if not terms:return []
-    out=[];used=set()
-    bad=r'\b(privacy|cookies?|contact|login|sign.?in|newsletter|policy|terms of use|about us|faq|all news|press releases?|accessibility|donate|learn more)\b'
-    vague=r'^(apply|apply now|more|view|details|read more|learn more|click here|download|register|sign up|browse|view all|open)$'
-    for href,title in extractor.links:
-        title=title.strip()[:170]
-        if len(title)<15 or len(title)>165 or re.search(vague,title,re.I) or re.search(bad,title,re.I):continue
-        url=urljoin(final_url,href)
-        if not is_trusted(url,source):continue
-        url=url.split('#',1)[0]
-        if url.rstrip('/')==final_url.rstrip('/') or url in used:continue
-        # Require a meaningful topical title, not a generic Apply button or unrelated article.
-        if not any(re.search(r'\b'+re.escape(k)+r'\b',title,re.I) for k in terms):continue
-        if re.search(r'\b(news|story|blog|press|announces?|highlights?|results|winners?|past recipients?)\b',title,re.I):continue
-        # Don't infer an offer from a title alone: this is a *review candidate*.
-        used.add(url)
-        uid='dir_'+hashlib.sha256(url.encode()).hexdigest()[:20]
-        out.append({
-         'id':uid,'title':title,'url':url,
-         'provider':source['name'],'source':source['name'],
-         'country':source.get('country','Worldwide'),
-         'kind':'directory_candidate','opportunity_type':'official_directory_lead',
-         'summary':'Found in an official opportunity directory. Opening, deadline, value, eligibility and current availability have NOT been verified. Open the source before approving.',
-         'published_at':'','found_at':now.date().isoformat(),
-         'review_required':True,'verification_status':'unverified'
+    results=[]; seen_urls=set(); seen_titles=set()
+    for href, label in parser.links:
+        title=re.sub(r'\s+', ' ', label).strip()
+        if not specific_title(title): continue
+        url=urljoin(final_url,href).split('#',1)[0]
+        if not is_trusted(url,source) or url.rstrip('/')==final_url.rstrip('/'):
+            continue
+        # Named open item MUST appear before the closed/under-evaluation section.
+        pos = visible.find(title)
+        if pos < 0: continue
+        tail = visible[pos+len(title):pos+len(title)+250]
+        # Only accept a date and award attached to THIS item, before its View Challenge link.
+        tail = re.split(r'\bView (?:Closed )?Challenge\b',tail,maxsplit=1,flags=re.I)[0]
+        closing = re.search(r'Closing date\s*:\s*(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,10}\s+\d{4})',tail,re.I)
+        award = re.search(r'\bAward\s*:\s*(.{3,100}?)(?=$|\bClosing date\s*:)',tail,re.I)
+        if not closing or not award: continue
+        date = parse_closing_date(closing.group(1))
+        if not date or date < now.date() or date > now.date()+dt.timedelta(days=730): continue
+        award_text = re.sub(r'\s+', ' ', award.group(1)).strip(' .;,')[:95]
+        if not award_text or len(award_text)<3:continue
+        norm=re.sub(r'\W+','',title.casefold())
+        if url in seen_urls or norm in seen_titles:continue
+        seen_urls.add(url);seen_titles.add(norm)
+        results.append({
+          'id':'challenge_'+hashlib.sha256(url.encode()).hexdigest()[:20],
+          'title':title,'url':url,'provider':source['name'],'source':source['name'],
+          'country':source.get('country','Worldwide'),'kind':'named_active_challenge',
+          'opportunity_type':'innovation_prize_challenge',
+          'summary':f'Official directory lists closing date {date.isoformat()} and award: {award_text}. Eligibility and availability need manual confirmation at the source.',
+          'deadline':date.isoformat(),'award':award_text,'published_at':'',
+          'found_at':now.date().isoformat(),'review_required':True,
+          'verification_status':'unverified'
         })
-        if len(out)>=int(source.get('max_directory_candidates') or 6):break
-    return out
+    return results[:12]
+
+
+def bao_current_fund(raw, source, now, final_url):
+    """One specifically defined currently-listed arts fund, not menu headings.
+
+    Zero generic broad 'Grant & Funding' links are considered opportunities.
+    """
+    visible=text_only(raw.decode('utf-8', errors='replace'))
+    found=re.search(r'(Call for (\d{4}) BAO Professional Development Fund)',visible,re.I)
+    if not found:return []
+    start=found.start()
+    # Require it to be in the Current Calls section rather than archived calls.
+    before=visible[:start]
+    current=before.lower().rfind('current calls for artists')
+    archive=max(before.lower().rfind('past calls'),before.lower().rfind('closed calls'))
+    if current<0 or archive>current:return []
+    tail=visible[found.end():found.end()+1400]
+    deadline=re.search(r'Application Deadline\s*:\s*([A-Z][a-z]+\s+\d{1,2},?\s+\d{4})',tail,re.I)
+    amount=re.search(r'Funding Amount\s*:\s*(up to\s*\$[\d,]+(?:\.\d\d)?)',tail,re.I)
+    if not deadline or not amount: return []
+    try: due=dt.datetime.strptime(deadline.group(1).replace(',',''),'%B %d %Y').date()
+    except ValueError:return []
+    if not (now.date()<=due<=now.date()+dt.timedelta(days=730)):return []
+    title=found.group(1).strip()
+    return [{
+      'id':'program_'+hashlib.sha256((final_url+'#'+str(found.group(2))+'-bao-profdev').encode()).hexdigest()[:20],
+      'title':title,'url':final_url,'provider':source['name'],'source':source['name'],
+      'country':source.get('country','Canada'),'kind':'named_current_grant',
+      'opportunity_type':'arts_professional_development_fund',
+      'summary':f'Official current-calls page lists {amount.group(1)} and an application deadline of {due.isoformat()} (or until funds are depleted). Restricted eligibility; verify before approval.',
+      'deadline':due.isoformat(),'award':amount.group(1), 'published_at':'',
+      'found_at':now.date().isoformat(),'review_required':True,
+      'verification_status':'unverified'
+    }]
+
+
+def specific_page_candidates(raw, source, now, final_url):
+    parser = {'innocentive_active_challenges': active_innocentive_challenges,
+              'bao_current_fund': bao_current_fund}.get(source.get('discovery_strategy'))
+    return parser(raw,source,now,final_url) if parser else []
+
 
 def site_digest(raw):
     body = text_only(raw.decode('utf-8', errors='replace'))[:160_000]
@@ -340,7 +423,7 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
     previous = get_json(storage / 'discoveries.json', {'candidates': [], 'page_changes': []})
     # Retrospectively screen previously queued headlines. This removes old
     # non-actionable FTC stories when the updated agent next runs.
-    valid_sources = {s.get('name'): s for s in sources if s.get('mode') == 'rss' or (s.get('mode') == 'watch' and s.get('discover_links'))}
+    valid_sources = {s.get('name'): s for s in sources if s.get('mode') == 'rss'}
     known = {}
     for record in previous.get('candidates', []):
         if not isinstance(record, dict) or not record.get('id') or not record.get('url'):
@@ -354,11 +437,6 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
             published_at = record.get('published_at', '')
             if not published_at or source_date(published_at, now) is None:continue
             record['opportunity_type'] = category
-        else:
-            # A link from an authorized directory remains a candidate only;
-            # never pretend it was newly opened or verified.
-            if record.get('kind') != 'directory_candidate':continue
-            record['opportunity_type'] = 'official_directory_lead'
         record['review_required'] = True
         known[record['id']] = record
 
@@ -432,14 +510,14 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
                             changes_found += 1
                             seen.add(eid)
                     hashes[sid] = digest
-                    if source.get('discover_links'):
-                        directory = directory_candidates(raw, source, now, final)
-                        for candidate in directory:
+                    if source.get('discovery_strategy'):
+                        active = specific_page_candidates(raw, source, now, final)
+                        for candidate in active:
+                            known[candidate['id']] = candidate
                             if candidate['id'] not in seen:
-                                known[candidate['id']] = candidate
                                 fresh += 1
                                 seen.add(candidate['id'])
-                        record.update(status='ok', detail=f'Official opportunity directory inspected; {len(directory)} possible links (unverified)')
+                        record.update(status='ok', detail=f'Named actionable opportunities checked; {len(active)} currently listed (not yet verified by editor)')
                     else:
                         record.update(status='ok', detail='Content monitored; changes are not verified offers')
             else:
@@ -465,16 +543,17 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
     )[:300]
     page_changes = [v for v in page_changes if v.get('found_at', '') >= floor][-200:]
     report = {
-        'format': 'HOV-AGENT-1', 'filter_version': '2026-10-actionable-v3-directories',
+        'format': 'HOV-AGENT-1', 'filter_version': '2026-10-actionable-v4-specific-offers',
         'generated_at': now.isoformat(timespec='seconds'),
         'sources_scanned': scanned, 'sources_configured': len(sources),
         'sources_limited': limited, 'source_warnings': warnings,
         'source_health': health,
         'new_candidates': fresh, 'failures': errors,
         'source_changes': changes_found, 'page_changes': page_changes,
+        'verification_rule': 'Named opportunity, future deadline, benefit and official source required for specialized page extracts.',
         'sources_failed': len(errors), 'sources_healthy': len([h for h in health if h['status']=='ok']),
         'candidates': candidates,
-        'disclaimer': 'UNVERIFIED review candidates only. Directory links are not necessarily new or open. Eligibility, deadline, value and availability must be confirmed manually. Ordinary news and changed pages are not verified offers.'
+        'disclaimer': 'UNVERIFIED review candidates only. Named offers are extracted from official pages with deadline and benefit evidence, but eligibility and availability still require human verification. Generic links, old/closed calls, news and page changes are excluded.'
     }
     # Preserve order of arrival (not alphabetical order) when trimming seen IDs.
     # A bounded set prevents the state file from growing forever.
