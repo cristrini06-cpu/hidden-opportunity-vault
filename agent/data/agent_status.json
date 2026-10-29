@@ -1,12 +1,12 @@
 {
   "format": "HOV-STATUS-1",
-  "state": "not_configured",
-  "updated_at": "",
-  "started_at": "",
+  "state": "running",
+  "updated_at": "2026-10-29T00:59:55+00:00",
+  "started_at": "2026-10-29T00:59:55+00:00",
   "finished_at": "",
   "last_run_at": "",
   "sources_scanned": 0,
   "sources_configured": 71,
   "errors": 0,
-  "message": "Scheduler has not yet run; this initial file is intentionally not an active status."
+  "message": "Scheduled scan started; waiting for results."
 }
