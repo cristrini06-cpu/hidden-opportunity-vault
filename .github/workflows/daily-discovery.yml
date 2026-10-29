@@ -1,0 +1,87 @@
+
+name: Daily Discovery Agent
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 9 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: hov-discovery-agent
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.publish_done.outputs.page_url }}
+
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Configure bot identity
+        run: |
+          git config user.name "vault-discovery-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Mark agent running
+        run: |
+          python agent/status.py start
+          git add agent/data/agent_status.json
+          git commit -m "Agent: started scheduled scan"
+          git push
+
+      - name: Package running status
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: hov-agent-running
+          path: '.'
+
+      - name: Publish running status
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: hov-agent-running
+
+      - name: Discover new opportunities
+        id: scan
+        run: python agent/monitor.py
+
+      - name: Record scan results
+        if: always()
+        env:
+          SCAN_OUTCOME: ${{ steps.scan.outcome }}
+        run: |
+          python agent/status.py finish "$SCAN_OUTCOME"
+          git add agent/data/discoveries.json agent/data/state.json agent/data/agent_status.json
+          git commit -m "Agent: publish daily scan report"
+          git push
+
+      - name: Package completed scan
+        if: always()
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: hov-agent-completed
+          path: '.'
+
+      - name: Publish discoveries and status
+        id: publish_done
+        if: always()
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: hov-agent-completed
