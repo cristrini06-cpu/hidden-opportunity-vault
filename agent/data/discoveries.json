@@ -1,32 +1,733 @@
 {
   "format": "HOV-AGENT-1",
   "filter_version": "2026-10-actionable-v2",
-  "generated_at": "2026-10-29T02:38:28+00:00",
-  "sources_scanned": 56,
+  "generated_at": "2026-10-29T03:11:18+00:00",
+  "sources_scanned": 57,
   "sources_configured": 71,
+  "sources_limited": 2,
+  "source_warnings": [
+    "adidas Product Testing: Interactive page: link reachable, but active offers cannot be extracted by this static scanner",
+    "1iota TV Audience Invitations: Interactive page: link reachable, but active offers cannot be extracted by this static scanner"
+  ],
+  "source_health": [
+    {
+      "id": "feed_ftc_refunds",
+      "name": "FTC Consumer Protection",
+      "mode": "rss",
+      "url": "https://www.ftc.gov/feeds/press-release-consumer-protection.xml",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Official feed parsed; candidates are unverified",
+      "final_url": "https://www.ftc.gov/feeds/press-release-consumer-protection.xml"
+    },
+    {
+      "id": "feed_nasa",
+      "name": "NASA Official News",
+      "mode": "rss",
+      "url": "https://www.nasa.gov/feed/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Official feed parsed; candidates are unverified",
+      "final_url": "https://www.nasa.gov/feed/"
+    },
+    {
+      "id": "watch_hov001",
+      "name": "Coty Testing Institute",
+      "mode": "watch",
+      "url": "https://www.cotyinstitute.com/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.cotyinstitute.com/"
+    },
+    {
+      "id": "watch_hov002",
+      "name": "Boots Volunteers",
+      "mode": "watch",
+      "url": "https://www.bootsvolunteers.com/what-we-do",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.bootsvolunteers.com/what-we-do"
+    },
+    {
+      "id": "watch_hov005",
+      "name": "adidas Product Testing",
+      "mode": "watch",
+      "url": "https://producttesting.adidas.com/",
+      "status": "limited",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Interactive page: link reachable, but active offers cannot be extracted by this static scanner",
+      "final_url": "https://producttesting.adidas.com/"
+    },
+    {
+      "id": "watch_hov008",
+      "name": "SGS Clinical Studies",
+      "mode": "watch",
+      "url": "https://sgsclinicalstudies.com/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://sgsclinicalstudies.com/"
+    },
+    {
+      "id": "watch_hov010",
+      "name": "CRC Research",
+      "mode": "watch",
+      "url": "https://www.crcresearch.com/en/participate",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.crcresearch.com/en/participate"
+    },
+    {
+      "id": "watch_hov011",
+      "name": "Canada Post Research Panel",
+      "mode": "watch",
+      "url": "https://www.canadapost-postescanada.ca/cpc/en/our-company/research-panel.page",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.canadapost-postescanada.ca/cpc/en/our-company/research-panel.page"
+    },
+    {
+      "id": "watch_hov014",
+      "name": "Google UX Research",
+      "mode": "watch",
+      "url": "https://userresearch.google.com/edu/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://userresearch.google.com/edu/"
+    },
+    {
+      "id": "watch_hov019",
+      "name": "EA Playtesting",
+      "mode": "watch",
+      "url": "https://www.ea.com/en-ca/playtesting",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.ea.com/en-ca/playtesting"
+    },
+    {
+      "id": "watch_hov021",
+      "name": "PlayStation Beta Program",
+      "mode": "watch",
+      "url": "https://www.playstation.com/en-ca/beta-program-at-playstation/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.playstation.com/en-ca/beta-program-at-playstation/"
+    },
+    {
+      "id": "watch_hov023",
+      "name": "1iota TV Audience Invitations",
+      "mode": "watch",
+      "url": "https://1iota.com/",
+      "status": "limited",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Interactive page: link reachable, but active offers cannot be extracted by this static scanner",
+      "final_url": "https://1iota.com/"
+    },
+    {
+      "id": "watch_hov024",
+      "name": "Toronto Public Library Cultural Pass",
+      "mode": "watch",
+      "url": "https://tpl.ca/using-the-library/services/map/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://tpl.ca/using-the-library/services/map/"
+    },
+    {
+      "id": "watch_hov025",
+      "name": "Toronto Musical Instrument Lending",
+      "mode": "watch",
+      "url": "https://tpl.ca/using-the-library/services/borrow-a-musical-instrument/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://tpl.ca/using-the-library/services/borrow-a-musical-instrument/"
+    },
+    {
+      "id": "watch_hov027",
+      "name": "Montréal Borrow a Museum",
+      "mode": "watch",
+      "url": "https://montreal.ca/en/services/borrow-pass-library-to-visit-museums",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://montreal.ca/en/services/borrow-pass-library-to-visit-museums"
+    },
+    {
+      "id": "watch_hov029",
+      "name": "Canoo Parks Canada Access",
+      "mode": "watch",
+      "url": "https://parks.canada.ca/voyage-travel/admission/cultur",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://parks.canada.ca/voyage-travel/admission/cultur"
+    },
+    {
+      "id": "watch_hov034",
+      "name": "Singapore Changi Free Tour",
+      "mode": "watch",
+      "url": "https://www.changiairport.com/en/experience/tours/free-singapore-tour.html",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.changiairport.com/en/experience/tours/free-singapore-tour.html"
+    },
+    {
+      "id": "watch_hov037",
+      "name": "Delta Medallion Status Match",
+      "mode": "watch",
+      "url": "https://www.delta.com/us/en/skymiles/medallion-program/status-match-challenge",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.delta.com/us/en/skymiles/medallion-program/status-match-challenge"
+    },
+    {
+      "id": "watch_hov039",
+      "name": "U.S. Government Unclaimed Money Guide",
+      "mode": "watch",
+      "url": "https://www.usa.gov/unclaimed-money",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.usa.gov/unclaimed-money"
+    },
+    {
+      "id": "watch_hov041",
+      "name": "Alberta Unclaimed Property",
+      "mode": "watch",
+      "url": "https://www.alberta.ca/unclaimed-property",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.alberta.ca/unclaimed-property"
+    },
+    {
+      "id": "watch_hov044",
+      "name": "Brazil Valores a Receber",
+      "mode": "watch",
+      "url": "https://www.bcb.gov.br/meubc/faqs/p/como-consultar-valores-de-pessoas-fisicas-e-juridicas",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Page returned insufficient text; may require JavaScript or login",
+      "final_url": "https://www.bcb.gov.br/meubc/faqs/p/como-consultar-valores-de-pessoas-fisicas-e-juridicas"
+    },
+    {
+      "id": "watch_hov047",
+      "name": "Nigeria E-Dividend Mandate",
+      "mode": "watch",
+      "url": "https://sec.gov.ng/for-investors/keep-track-of-circulars/revamped-e-dividend-mandate-management-system-portal/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://sec.gov.ng/for-investors/keep-track-of-circulars/revamped-e-dividend-mandate-management-system-portal/"
+    },
+    {
+      "id": "watch_hov051",
+      "name": "FTC Active Refund Programs",
+      "mode": "watch",
+      "url": "https://www.ftc.gov/enforcement/refunds",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.ftc.gov/enforcement/refunds"
+    },
+    {
+      "id": "watch_hov055",
+      "name": "Apple Trade In and Recycling",
+      "mode": "watch",
+      "url": "https://www.apple.com/ca/recycling/",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Page returned insufficient text; may require JavaScript or login",
+      "final_url": "https://www.apple.com/ca/recycling/"
+    },
+    {
+      "id": "watch_hov059",
+      "name": "NASA Orbital Clarity Challenge",
+      "mode": "watch",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/"
+    },
+    {
+      "id": "watch_hov063",
+      "name": "Smithsonian Artist Research Fellowships",
+      "mode": "watch",
+      "url": "https://fellowships.si.edu/SARF",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 403 (access restricted; do not bypass)"
+    },
+    {
+      "id": "watch_hov068",
+      "name": "AWS Activate Startup Credits",
+      "mode": "watch",
+      "url": "https://aws.amazon.com/startups/credits",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://aws.amazon.com/startups/credits/"
+    },
+    {
+      "id": "watch_hov073",
+      "name": "Ontario Small Business Legal Support",
+      "mode": "watch",
+      "url": "https://www.ontario.ca/page/business/start/get-funding-or-more-help",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.ontario.ca/page/business/start/get-funding-or-more-help"
+    },
+    {
+      "id": "watch_hov078",
+      "name": "Brampton Community Grants and Support",
+      "mode": "watch",
+      "url": "https://www.brampton.ca/EN/Business/BEC/Pages/GrantsFunding.aspx",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.brampton.ca/EN/Business/BEC/Pages/GrantsFunding.aspx"
+    },
+    {
+      "id": "watch_hov083",
+      "name": "Treat At-Home Pet Studies",
+      "mode": "watch",
+      "url": "https://treatx.bio/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://treatx.bio/"
+    },
+    {
+      "id": "watch_hov013",
+      "name": "Trybers Product Tests",
+      "mode": "watch",
+      "url": "https://www.trybers.com/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.trybers.com/"
+    },
+    {
+      "id": "watch_hov028",
+      "name": "Nashville Library of Things",
+      "mode": "watch",
+      "url": "https://www.library.nashville.org/services/library-things",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 403 (access restricted; do not bypass)"
+    },
+    {
+      "id": "watch_hov030",
+      "name": "National Parks Volunteer Pass",
+      "mode": "watch",
+      "url": "https://www.nps.gov/articles/000/250-for-250.htm",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.nps.gov/articles/000/250-for-250.htm"
+    },
+    {
+      "id": "watch_hov031",
+      "name": "Turkish Airlines Stopover Hotel",
+      "mode": "watch",
+      "url": "https://www.turkishairlines.com/en-ca/flights/stopover/",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "The read operation timed out"
+    },
+    {
+      "id": "watch_hov032",
+      "name": "Etihad Abu Dhabi Stopover",
+      "mode": "watch",
+      "url": "https://www.etihad.com/en-us/abu-dhabi/stopover",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "The read operation timed out"
+    },
+    {
+      "id": "watch_hov033",
+      "name": "Qatar Airways Transit Accommodation",
+      "mode": "watch",
+      "url": "https://www.qatarairways.com/en/help/transit-accommodation-v4.html",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 403 (access restricted; do not bypass)"
+    },
+    {
+      "id": "watch_hov035",
+      "name": "Changi Transit Privileges",
+      "mode": "watch",
+      "url": "https://www.changiairport.com/en/experience/transit/transit-dapat-lebih.html",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 404 (missing or moved page)"
+    },
+    {
+      "id": "watch_hov036",
+      "name": "United Premier Status Match",
+      "mode": "watch",
+      "url": "https://promo.united.com/statusmatch/?env=prd&pid=SM2026",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "The read operation timed out"
+    },
+    {
+      "id": "watch_hov038",
+      "name": "Bank of Canada Unclaimed Balances",
+      "mode": "watch",
+      "url": "https://www.unclaimedproperties.bankofcanada.ca/app/claim-search",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Page returned insufficient text; may require JavaScript or login",
+      "final_url": "https://www.unclaimedproperties.bankofcanada.ca/app/claim-search"
+    },
+    {
+      "id": "watch_hov040",
+      "name": "U.S. NAIC Insurance Locator",
+      "mode": "watch",
+      "url": "https://content.naic.org/article/naic-life-insurance-policy-locator-tool-helps-match-consumers-more-16-billion-lost-and-unclaimed",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 403 (access restricted; do not bypass)"
+    },
+    {
+      "id": "watch_hov043",
+      "name": "Australia Unclaimed Money Search",
+      "mode": "watch",
+      "url": "https://moneysmart.gov.au/find-unclaimed-money",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 403 (access restricted; do not bypass)"
+    },
+    {
+      "id": "watch_hov045",
+      "name": "South Africa Unclaimed Benefits",
+      "mode": "watch",
+      "url": "https://www.fsca.co.za/Unclaimed-Benefits-Search/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.fsca.co.za/Unclaimed-Benefits-Search/"
+    },
+    {
+      "id": "watch_hov046",
+      "name": "India RBI UDGAM",
+      "mode": "watch",
+      "url": "https://udgam.rbi.org.in/unclaimed-deposits/#/login",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "<urlopen error timed out>"
+    },
+    {
+      "id": "watch_hov048",
+      "name": "UK Unclaimed Estates Register",
+      "mode": "watch",
+      "url": "https://www.gov.uk/government/statistical-data-sets/unclaimed-estates-list",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.gov.uk/government/statistical-data-sets/unclaimed-estates-list"
+    },
+    {
+      "id": "watch_hov050",
+      "name": "The MLC Artist Lookup",
+      "mode": "watch",
+      "url": "https://www.durp.themlc.com/artist-lookup",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.durp.themlc.com/artist-lookup"
+    },
+    {
+      "id": "watch_hov052",
+      "name": "UK Broadband Auto Compensation",
+      "mode": "watch",
+      "url": "https://www.ofcom.org.uk/phones-and-broadband/service-quality/automatic-compensation-need-know",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 403 (access restricted; do not bypass)"
+    },
+    {
+      "id": "watch_hov053",
+      "name": "UK Electricity Outage Compensation",
+      "mode": "watch",
+      "url": "https://www.ofgem.gov.uk/your-energy-supply/problems-your-energy-supply/check-if-you-can-get-payment-power-cut",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.ofgem.gov.uk/your-energy-supply/problems-your-energy-supply/check-if-you-can-get-payment-power-cut"
+    },
+    {
+      "id": "watch_hov056",
+      "name": "NASA Software Catalog",
+      "mode": "watch",
+      "url": "https://software.nasa.gov/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://software.nasa.gov/"
+    },
+    {
+      "id": "watch_hov057",
+      "name": "NASA Technology Startup Licensing",
+      "mode": "watch",
+      "url": "https://technology.nasa.gov/license",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://technology.nasa.gov/license"
+    },
+    {
+      "id": "watch_hov058",
+      "name": "NASA ORBIT Challenge 2027",
+      "mode": "watch",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-orbit-challenge-2027/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-orbit-challenge-2027/"
+    },
+    {
+      "id": "watch_hov060",
+      "name": "ESA Open Space Innovation Platform",
+      "mode": "watch",
+      "url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/The_Open_Space_Innovation_Platform_OSIP",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/The_Open_Space_Innovation_Platform_OSIP"
+    },
+    {
+      "id": "watch_hov061",
+      "name": "InnoCentive Open Challenges",
+      "mode": "watch",
+      "url": "https://www.innocentive.com/challenges/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.innocentive.com/challenges/"
+    },
+    {
+      "id": "watch_hov062",
+      "name": "Culture Moves Europe Mobility",
+      "mode": "watch",
+      "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility"
+    },
+    {
+      "id": "watch_hov064",
+      "name": "Brampton Writer in Residence",
+      "mode": "watch",
+      "url": "https://bramptonartsorg.ca/opportunities/open-calls/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://bramptonartsorg.ca/opportunities/open-calls/"
+    },
+    {
+      "id": "watch_hov065",
+      "name": "Ontario Government Funding Opportunities",
+      "mode": "watch",
+      "url": "https://www.ontario.ca/page/available-funding-opportunities-ontario-government",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.ontario.ca/page/available-funding-opportunities-ontario-government"
+    },
+    {
+      "id": "watch_hov067",
+      "name": "Innovation Canada Business Benefits",
+      "mode": "watch",
+      "url": "https://innovation.canada.ca/",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "id": "watch_hov069",
+      "name": "IBM SkillsBuild Free Credentials",
+      "mode": "watch",
+      "url": "https://www.skillsbuild.org/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.skillsbuild.org/"
+    },
+    {
+      "id": "watch_hov070",
+      "name": "Microsoft Learn",
+      "mode": "watch",
+      "url": "https://www.microsoft.com/en-ca/microsoft-learn",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.microsoft.com/en-ca/microsoft-learn"
+    },
+    {
+      "id": "watch_hov072",
+      "name": "YESNet Digital Upskilling",
+      "mode": "watch",
+      "url": "https://www.yes.on.ca/yesnetdigital/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.yes.on.ca/yesnetdigital/"
+    },
+    {
+      "id": "watch_hov074",
+      "name": "Ontario Home Energy Savings",
+      "mode": "watch",
+      "url": "https://www.saveonenergy.ca/For-Your-Home",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.saveonenergy.ca/For-Your-Home"
+    },
+    {
+      "id": "watch_hov077",
+      "name": "DiscoverEU Youth Travel",
+      "mode": "watch",
+      "url": "https://youth.europa.eu/discovereu_en",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://youth.europa.eu/discovereu_en"
+    },
+    {
+      "id": "watch_hov080",
+      "name": "Purina UK Your Purina Tester Panel",
+      "mode": "watch",
+      "url": "https://www.purina.co.uk/your-purina",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.purina.co.uk/your-purina"
+    },
+    {
+      "id": "watch_hov081",
+      "name": "Vista Pets Home Tester Panel",
+      "mode": "watch",
+      "url": "https://vista-pets.com/en",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://vista-pets.com/en"
+    },
+    {
+      "id": "watch_hov082",
+      "name": "PetSafe Product Testing Panel",
+      "mode": "watch",
+      "url": "https://www.petsafe.com/about-us/joinpanel",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.petsafe.com/about-us/joinpanel"
+    },
+    {
+      "id": "watch_hov084",
+      "name": "Animora Pet Tester Program",
+      "mode": "watch",
+      "url": "https://animora.ca/en/animora-tester-program/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://animora.ca/en/animora-tester-program/"
+    },
+    {
+      "id": "watch_hov085",
+      "name": "Shanzi Naturals Pet Testers",
+      "mode": "watch",
+      "url": "https://shanzinaturals.co.uk/pages/shanzi-naturals-product-testers-apply-to-test-natural-pet-products",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 404 (missing or moved page)"
+    },
+    {
+      "id": "watch_hov086",
+      "name": "Symrise Panelis Pet Owner Research",
+      "mode": "watch",
+      "url": "https://petfood.symrise.com/what-we-offer/palatability-measurement-with-panelis/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://petfood.symrise.com/what-we-offer/palatability-measurement-with-panelis/"
+    },
+    {
+      "id": "watch_perks2026_005",
+      "name": "Tesco Clubcard — 2× Reward Partner Value",
+      "mode": "watch",
+      "url": "https://www.tesco.com/help/pages/clubcard-faqs/clubcard-reward-partners/using-clubcard-vouchers-with-reward-partners",
+      "status": "failed",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "HTTP 403 (access restricted; do not bypass)"
+    },
+    {
+      "id": "watch_perks2026_009",
+      "name": "Lidl Plus — Redeem Points for Free Items or Coupons",
+      "mode": "watch",
+      "url": "https://www.lidl.co.uk/c/lidl-plus-points/s10093518",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.lidl.co.uk/c/lidl-plus-points/s10093518"
+    },
+    {
+      "id": "watch_perks2026_012",
+      "name": "Australian OnePass — Free Delivery Across Retailers",
+      "mode": "watch",
+      "url": "https://onepass.com.au/benefits",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://onepass.com.au/benefits"
+    },
+    {
+      "id": "watch_perks2026_014",
+      "name": "GrabCoins — Cross-Service Rewards in Southeast Asia",
+      "mode": "watch",
+      "url": "https://www.grab.com/inside-grab/stories/grabrewards-grabcoins-earn-savings-redeem/",
+      "status": "ok",
+      "checked_at": "2026-10-29T03:11:18+00:00",
+      "detail": "Content monitored; changes are not verified offers",
+      "final_url": "https://www.grab.com/inside-grab/stories/grabrewards-grabcoins-earn-savings-redeem/"
+    }
+  ],
   "new_candidates": 0,
   "failures": [
-    "adidas Product Testing: Page returned insufficient text",
-    "1iota TV Audience Invitations: Page returned insufficient text",
-    "Brazil Valores a Receber: Redirected outside trusted source",
-    "Apple Trade In and Recycling: Page returned insufficient text",
-    "Smithsonian Artist Research Fellowships: HTTP Error 403: Forbidden",
-    "Nashville Library of Things: HTTP Error 403: Forbidden",
+    "Brazil Valores a Receber: Page returned insufficient text; may require JavaScript or login",
+    "Apple Trade In and Recycling: Page returned insufficient text; may require JavaScript or login",
+    "Smithsonian Artist Research Fellowships: HTTP 403 (access restricted; do not bypass)",
+    "Nashville Library of Things: HTTP 403 (access restricted; do not bypass)",
     "Turkish Airlines Stopover Hotel: The read operation timed out",
     "Etihad Abu Dhabi Stopover: The read operation timed out",
-    "Qatar Airways Transit Accommodation: HTTP Error 403: Forbidden",
-    "Changi Transit Privileges: HTTP Error 404: Not Found",
+    "Qatar Airways Transit Accommodation: HTTP 403 (access restricted; do not bypass)",
+    "Changi Transit Privileges: HTTP 404 (missing or moved page)",
     "United Premier Status Match: The read operation timed out",
-    "Bank of Canada Unclaimed Balances: Page returned insufficient text",
-    "U.S. NAIC Insurance Locator: HTTP Error 403: Forbidden",
-    "Australia Unclaimed Money Search: HTTP Error 403: Forbidden",
+    "Bank of Canada Unclaimed Balances: Page returned insufficient text; may require JavaScript or login",
+    "U.S. NAIC Insurance Locator: HTTP 403 (access restricted; do not bypass)",
+    "Australia Unclaimed Money Search: HTTP 403 (access restricted; do not bypass)",
     "India RBI UDGAM: <urlopen error timed out>",
-    "UK Broadband Auto Compensation: HTTP Error 403: Forbidden",
+    "UK Broadband Auto Compensation: HTTP 403 (access restricted; do not bypass)",
     "Innovation Canada Business Benefits: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
-    "Shanzi Naturals Pet Testers: HTTP Error 404: Not Found",
-    "Tesco Clubcard — 2× Reward Partner Value: HTTP Error 403: Forbidden"
+    "Shanzi Naturals Pet Testers: HTTP 404 (missing or moved page)",
+    "Tesco Clubcard — 2× Reward Partner Value: HTTP 403 (access restricted; do not bypass)"
   ],
-  "source_changes": 10,
+  "source_changes": 6,
   "page_changes": [
     {
       "id": "changed_e4287c299678827c391e",
@@ -120,6 +821,66 @@
     },
     {
       "id": "changed_7975d095103c61ce9907",
+      "title": "Page change: Microsoft Learn",
+      "url": "https://www.microsoft.com/en-ca/microsoft-learn",
+      "source": "Microsoft Learn",
+      "country": "Worldwide",
+      "kind": "page_changed",
+      "found_at": "2026-10-29",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_73f452093290c7196fd4",
+      "title": "Page change: SGS Clinical Studies",
+      "url": "https://sgsclinicalstudies.com/",
+      "source": "SGS Clinical Studies",
+      "country": "Worldwide",
+      "kind": "page_changed",
+      "found_at": "2026-10-29",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_c177714dc57618f35b17",
+      "title": "Page change: Toronto Public Library Cultural Pass",
+      "url": "https://tpl.ca/using-the-library/services/map/",
+      "source": "Toronto Public Library Cultural Pass",
+      "country": "Canada",
+      "kind": "page_changed",
+      "found_at": "2026-10-29",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_1f7b3d84dcfe8dd0bd5e",
+      "title": "Page change: Toronto Musical Instrument Lending",
+      "url": "https://tpl.ca/using-the-library/services/borrow-a-musical-instrument/",
+      "source": "Toronto Musical Instrument Lending",
+      "country": "Canada",
+      "kind": "page_changed",
+      "found_at": "2026-10-29",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_36b7774ca945e76a0c16",
+      "title": "Page change: Trybers Product Tests",
+      "url": "https://www.trybers.com/",
+      "source": "Trybers Product Tests",
+      "country": "Netherlands",
+      "kind": "page_changed",
+      "found_at": "2026-10-29",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_6b355d8868c183cffbec",
+      "title": "Page change: NASA ORBIT Challenge 2027",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-orbit-challenge-2027/",
+      "source": "NASA ORBIT Challenge 2027",
+      "country": "United States",
+      "kind": "page_changed",
+      "found_at": "2026-10-29",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_99409bee3c7167f4e1aa",
       "title": "Page change: Microsoft Learn",
       "url": "https://www.microsoft.com/en-ca/microsoft-learn",
       "source": "Microsoft Learn",
