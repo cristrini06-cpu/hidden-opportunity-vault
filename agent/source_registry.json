@@ -70,7 +70,9 @@
       "country": "United States",
       "allowed_hosts": [
         "producttesting.adidas.com"
-      ]
+      ],
+      "monitor_policy": "link_only",
+      "monitor_note": "Interactive or JavaScript-rendered service. An HTTPS link check cannot verify current tests or invitations; check applications manually."
     },
     {
       "id": "watch_hov008",
@@ -140,7 +142,9 @@
       "country": "United States",
       "allowed_hosts": [
         "1iota.com"
-      ]
+      ],
+      "monitor_policy": "link_only",
+      "monitor_note": "Interactive or JavaScript-rendered service. An HTTPS link check cannot verify current tests or invitations; check applications manually."
     },
     {
       "id": "watch_hov024",
@@ -226,11 +230,12 @@
       "id": "watch_hov044",
       "name": "Brazil Valores a Receber",
       "mode": "watch",
-      "url": "https://valoresareceber.bcb.gov.br/",
+      "url": "https://www.bcb.gov.br/meubc/faqs/p/como-consultar-valores-de-pessoas-fisicas-e-juridicas",
       "country": "Brazil",
       "allowed_hosts": [
-        "valoresareceber.bcb.gov.br"
-      ]
+        "www.bcb.gov.br"
+      ],
+      "monitor_note": "Monitoring central-bank information page. Actual claims must be completed only through valoresareceber.bcb.gov.br."
     },
     {
       "id": "watch_hov047",

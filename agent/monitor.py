@@ -22,6 +22,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
 
 HERE = Path(__file__).resolve().parent
 UTC = dt.timezone.utc
@@ -80,14 +81,29 @@ def fetch(url):
         'User-Agent': 'HiddenOpportunityVaultResearchBot/1.1 (+manual editorial review)',
         'Accept': 'application/atom+xml,application/rss+xml,application/xml,text/xml,text/html;q=0.8',
     })
-    with urlopen(req, timeout=12) as response:
-        final = response.geturl()
-        if not final.startswith('https://'):
-            raise ValueError('Unsafe redirect')
-        raw = response.read(MAX_BYTES + 1)
-        if len(raw) > MAX_BYTES:
-            raise ValueError('Source too large')
-        return raw, final
+    # One restrained retry for transient service errors. Deliberate HTTP 403
+    # restrictions are not bypassed: the source must be checked manually.
+    for attempt in range(2):
+        try:
+            with urlopen(req, timeout=10) as response:
+                final = response.geturl()
+                if not final.startswith('https://'):
+                    raise ValueError('Unsafe redirect')
+                raw = response.read(MAX_BYTES + 1)
+                if len(raw) > MAX_BYTES:
+                    raise ValueError('Source too large')
+                return raw, final
+        except HTTPError as exc:
+            if attempt == 0 and exc.code in (429, 500, 502, 503, 504):
+                time.sleep(0.8)
+                continue
+            raise
+        except (TimeoutError, URLError):
+            if attempt == 0:
+                time.sleep(0.8)
+                continue
+            raise
+    raise RuntimeError('Source retrieval could not complete')
 
 
 def is_trusted(url, source):
@@ -279,49 +295,86 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
     hashes = dict(state.get('watched_hashes', {}))
     page_changes = list(previous.get('page_changes', []))[-200:]
     errors = []
+    warnings = []
+    health = []
     scanned = 0
+    limited = 0
     fresh = 0
     changes_found = 0
 
     for source in sources:
+        name = str(source.get('name', 'unnamed'))
+        sid = str(source.get('id', ''))
         url = source.get('url', '')
-        if not url.startswith('https://') or not source.get('allowed_hosts') or not is_trusted(url, source):
-            errors.append(source.get('name', 'unnamed') + ': configuration rejected')
+        record = {
+            'id': sid, 'name': name, 'mode': source.get('mode', ''),
+            'url': url, 'status': 'unchecked',
+            'checked_at': now.isoformat(timespec='seconds'),
+            'detail': '',
+        }
+        if (not isinstance(url, str) or not url.startswith('https://')
+                or not source.get('allowed_hosts') or not is_trusted(url, source)):
+            record.update(status='failed', detail='Source configuration rejected')
+            errors.append(name + ': ' + record['detail'])
+            health.append(record)
             continue
         try:
             raw, final = fetcher(url)
+            # Redirects to unrelated hosts must not be treated as official
+            # without independently establishing the new source identity.
             if not is_trusted(final, source):
-                raise ValueError('Redirected outside trusted source')
+                raise ValueError('Redirected outside trusted source; manually review the destination')
             scanned += 1
-            if source['mode'] == 'rss':
-                for candidate in feed_records(raw, source, now):
+            record['final_url'] = final
+            if source.get('mode') == 'rss':
+                candidates = feed_records(raw, source, now)
+                for candidate in candidates:
                     if candidate['id'] not in seen:
                         known[candidate['id']] = candidate
                         fresh += 1
                         seen.add(candidate['id'])
-            elif source['mode'] == 'watch':
-                digest, size = site_digest(raw)
-                if size < 180:
-                    raise ValueError('Page returned insufficient text')
-                sid = source['id']
-                if sid in hashes and hashes[sid] != digest:
-                    eid = 'changed_' + hashlib.sha256((sid + digest).encode()).hexdigest()[:20]
-                    if eid not in seen:
-                        # A changed page is NOT counted as a newly found deal.
-                        page_changes.append({
-                            'id': eid, 'title': 'Page change: ' + source['name'],
-                            'url': final, 'source': source['name'],
-                            'country': source.get('country', 'Worldwide'),
-                            'kind': 'page_changed', 'found_at': now.date().isoformat(),
-                            'summary': 'Source page changed; no new reward or eligibility is established.',
-                        })
-                        changes_found += 1
-                        seen.add(eid)
-                hashes[sid] = digest
+                record.update(status='ok', detail='Official feed parsed; candidates are unverified')
+            elif source.get('mode') == 'watch':
+                # Some genuine partner portals require JavaScript or a user
+                # session. A link check is not a test for open invitations.
+                if source.get('monitor_policy') == 'link_only':
+                    limited += 1
+                    msg = ('Interactive page: link reachable, but active offers '
+                           'cannot be extracted by this static scanner')
+                    record.update(status='limited', detail=msg)
+                    warnings.append(name + ': ' + msg)
+                else:
+                    digest, size = site_digest(raw)
+                    if size < 180:
+                        raise ValueError('Page returned insufficient text; may require JavaScript or login')
+                    if sid in hashes and hashes[sid] != digest:
+                        eid = 'changed_' + hashlib.sha256((sid + digest).encode()).hexdigest()[:20]
+                        if eid not in seen:
+                            # Changed content does NOT prove a new offer.
+                            page_changes.append({
+                                'id': eid, 'title': 'Page change: ' + name,
+                                'url': final, 'source': name,
+                                'country': source.get('country', 'Worldwide'),
+                                'kind': 'page_changed', 'found_at': now.date().isoformat(),
+                                'summary': 'Source page changed; no new reward or eligibility is established.',
+                            })
+                            changes_found += 1
+                            seen.add(eid)
+                    hashes[sid] = digest
+                    record.update(status='ok', detail='Content monitored; changes are not verified offers')
             else:
                 raise ValueError('Unknown source mode')
         except Exception as exc:
-            errors.append(source.get('name', 'unnamed') + ': ' + str(exc)[:145])
+            detail = str(exc)[:180]
+            if isinstance(exc, HTTPError):
+                detail = ('HTTP ' + str(exc.code) +
+                          (' (access restricted; do not bypass)' if exc.code in (401, 403)
+                           else ' (rate limited; retry later)' if exc.code == 429
+                           else ' (missing or moved page)' if exc.code in (404, 410)
+                           else ' (upstream error)'))
+            record.update(status='failed', detail=detail)
+            errors.append(name + ': ' + detail)
+        health.append(record)
         if pause_seconds:
             time.sleep(pause_seconds)
 
@@ -335,6 +388,8 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
         'format': 'HOV-AGENT-1', 'filter_version': '2026-10-actionable-v2',
         'generated_at': now.isoformat(timespec='seconds'),
         'sources_scanned': scanned, 'sources_configured': len(sources),
+        'sources_limited': limited, 'source_warnings': warnings,
+        'source_health': health,
         'new_candidates': fresh, 'failures': errors,
         'source_changes': changes_found, 'page_changes': page_changes,
         'candidates': candidates,
@@ -362,7 +417,10 @@ def main():
           '| New opportunity candidates:', report['new_candidates'],
           '| Remaining candidates:', len(report['candidates']),
           '| Changed pages (separate):', report['source_changes'],
+          '| Sources with limited monitoring:', report['sources_limited'],
           '| Source errors:', len(report['failures']))
+    for warning in report['source_warnings']:
+        print('LIMITED:', warning)
     for error in report['failures']:
         print('WARN:', error)
 
