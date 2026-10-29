@@ -1,56 +1,72 @@
-HIDDEN OPPORTUNITY VAULT — GLOBAL POWERHOUSE EDITION
+HIDDEN OPPORTUNITY VAULT — GLOBAL DISCOVERY EDITION
+Complete consolidated website + Daily Discovery Agent
+Release: October 29, 2026
+===================================================
 
-OPEN THE WEBSITE NOW (no installation):
-1. Extract the entire ZIP folder.
-2. Double-click Hidden_Opportunity_Vault_POWERHOUSE.html.
-3. All 40 colorful department cards and 120 curated source-linked listings remain.
-4. The new buttons directly below search: BACK, BACK TO TOP, SAVE BACKUP, EXPORT, DAILY AGENT.
-5. In the Export menu: full catalogue CSV, saved opportunities CSV, application tracker CSV, JSON backup, approved local listings JSON, print/PDF.
+THIS IS THE COMPLETE REPLACEMENT PACKAGE, NOT A PATCH.
 
-YOUR DATA:
-- Save/unsave from every opportunity card and details panel.
-- 'Save Backup' downloads a JSON copy to your computer; save it somewhere safe.
-- Your live browser session saves to local storage automatically, for the same browser/device.
-- The earlier HOV browser storage key is maintained so existing local data still loads.
+OPEN THE SHOP ON YOUR WINDOWS COMPUTER:
+  1. Right-click the ZIP -> Extract All.
+  2. Double-click OPEN_HIDDEN_OPPORTUNITY_VAULT.html.
+  3. The whole shop (40 departments, 120 research listings, saved workspace,
+     search, alerts, clock and navigation) opens locally.
+  4. Local files will not run automatic internet scans. Live automation only
+     works on the deployed GitHub Pages version.
 
-DAILY AGENT:
-- 'Daily Agent' opens a review board. It cannot scan sources by itself inside an offline HTML file.
-- The ZIP contains a REAL Python discovery monitor, source registry and a daily GitHub Actions schedule.
-- It checks approved RSS feeds and selected official program pages for new or changed content.
-- Findings are leads requiring human verification, NOT verified offers.
-- To activate automatic daily updates for a public website, follow AGENT_SETUP.txt.
-- For an offline desktop: run the Python script manually (requires Python), then click 'Import Agent Report' in the website.
-- 'Load Latest Report' reads agent/data/discoveries.json from a hosted version of the site. It does not trigger an instant web crawl.
+REPLACE THE ONLINE SITE (keep the same GitHub repository):
+  1. DO NOT delete your GitHub repository or create a new one.
+  2. Keep your existing agent/data folder in GitHub. This ZIP deliberately
+     does NOT include generated agent/data JSON, so upload will not reset
+     your live history, discoveries, scan status or previously seen links.
+  3. Unzip this package. OPEN the extracted folder; select its CONTENTS
+     (index.html, the .github folder, agent folder, tests folder and TXT docs).
+     Do not drag the outer extracted folder itself into GitHub.
+  4. Open https://github.com/cristrini06-cpu/hidden-opportunity-vault/upload/main
+  5. Drag selected CONTENTS onto the GitHub page.
+     Expected root paths include: index.html, agent/monitor.py,
+     agent/source_registry.json and .github/workflows/daily-discovery.yml.
+     There must be NO extra enclosing folder at the start of these paths.
+  6. Click Commit changes -> Commit directly to main.
+  7. Open GitHub Actions -> Daily Discovery Agent -> Run workflow -> main.
+  8. After the workflow succeeds, refresh the live site:
+     https://cristrini06-cpu.github.io/hidden-opportunity-vault/
+     On the Agent panel click Load Latest Report.
 
-IMPORTANT BUSINESS LIMITATIONS:
-- This HTML file is not an always-on SaaS. The scanner runs daily only after publishing to your own GitHub repository and enabling Actions.
-- The scanner checks only the configured source registry, not the entire internet.
-- GitHub public repository and Pages setup may expose site source. Do not store private customer data, credentials or unreleased partner benefits in that public repository.
-- The public customer catalogue is not automatically filled from unverified bot leads. Use the editor and manual approval flow.
-- Commercial launch requires review of offer eligibility, consent, privacy, legal compliance, source rights, commercial operations, and appropriate monitoring resources.
+WHAT IS IMPROVED:
+  - Entire original 40-department, 120-listing catalogue and colourful layout.
+  - Back, Back to Top, Save Backup, Export, Homepage Discovery Signal, Agent
+    clock/countdown, six languages, mobile navigation and review workflow.
+  - Stricter rejection of ordinary news and government enforcement stories.
+  - 71 configured original official sources retained.
+  - Better handling for JavaScript-dependent and access-restricted sources.
+  - Source-health details now viewable in the Agent panel.
+  - Five approved official *directory pages* now yield potential program links
+    for review (when visible in their publicly accessible page content).
+    These links are NOT claims that new application windows have opened.
+  - No automatic approval/publishing of unverified opportunities.
+  - Real completed scans with no leads are described accurately.
 
-See AGENT_SETUP.txt and QA_REPORT.txt for exact details.
+LIMITATIONS — READ BEFORE SELLING:
+  - The scanning system is NOT a general AI web search or complete world scan.
+    It monitors a limited set of configured sources, and access restrictions,
+    anti-bot pages or JavaScript-only sites may still produce limited coverage.
+  - A technically successful scan does NOT prove every source succeeded.
+  - Newly extracted directory links are UNVERIFIED, may be old, and must have
+    eligibility, deadline, provider and availability checked manually.
+  - Admin approvals in the browser are stored LOCALLY on that browser;
+    they are not globally published for all visitors automatically.
+  - The existing public catalogue may contain outdated program details:
+    confirm current terms against official websites.
+  - The GitHub Actions schedule is a target; executions can be delayed.
+  - This update has passed offline tests and browser QA; a new live GitHub
+    run is still necessary to validate network-source performance.
 
+TROUBLESHOOTING:
+  - If the old edition appears, press Ctrl+F5 and check the left logo label:
+    GLOBAL DISCOVERY EDITION · OCT 29.
+  - If no new leads appear, this can be legitimate; review Agent source
+    health rather than assuming scanning is inactive.
+  - If source failures persist, do not try to bypass access restrictions.
+    They require editorial review, a replacement official feed, or a partner API.
 
-OCTOBER 28, 2026 — DAILY AGENT DIGITAL CLOCK UPDATE
--------------------------------------------------
-Open Hidden_Opportunity_Vault_POWERHOUSE.html and choose Daily Agent.
-The new compact digital clock shows your device's current local time,
-date and time-zone abbreviation. It updates each second.
-The Agent screen also displays the intended daily scan slot: 09:23 UTC.
-This is a scheduling TARGET, not a confirmation that scans are active.
-GitHub scheduling must still be activated as described in AGENT_SETUP.txt.
-The existing Last Scan (UTC) report field displays genuine scan data only.
-The website has not started scanning or publishing by itself.
-
-All 40 departments, 120 records, save/export/back controls and daily
-agent report review features are preserved.
-
-NEW: Agent countdown and live scan indicator
-Daily Agent now shows a seconds-accurate countdown to the scheduled 09:23 UTC scan and an honest scan status.
-Opening the HTML locally will show Not connected; an actual configured and running scheduler is required for a green Agent Running status.
-See AGENT_SETUP.txt for deployment details.
-
-OCTOBER 28, 2026 — HOMEPAGE NEW-DISCOVERY INDICATOR
-----------------------------------------------------
-A prominently visible "Opportunity Discovery Signal" has been added to Home, immediately under the main purple introduction panel. Customers can now see whether new discoveries are under review or recently published, without opening Daily Agent. Select "View discoveries" to see new published opportunities or "Browse all opportunities" for the complete Vault. The separate lead counter does not certify an offer. When the scanner is not connected, the homepage says so. See HOMEPAGE_DISCOVERY_UPDATE.txt for full details.
+For technical info read AGENT_SETUP.txt and QA_REPORT.txt.

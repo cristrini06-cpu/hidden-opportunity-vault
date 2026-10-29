@@ -3,6 +3,7 @@
 import datetime as dt, json, sys
 from pathlib import Path
 base=Path(__file__).resolve().parent/'data'
+base.mkdir(parents=True, exist_ok=True)
 p=base/'agent_status.json'
 try: current=json.loads(p.read_text(encoding='utf8'))
 except Exception: current={}

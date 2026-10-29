@@ -260,6 +260,75 @@ def feed_records(raw, source, now):
     return out
 
 
+class OpportunityLinkExtractor(HTMLParser):
+    """Visible anchor text on public official directory pages only."""
+    def __init__(self):
+        super().__init__()
+        self.links = []
+        self.href = None
+        self.text = []
+        self.skip_depth = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ('script','style','noscript','svg'):
+            self.skip_depth += 1
+        if self.skip_depth == 0 and tag == 'a':
+            self.href = dict(attrs).get('href', '')
+            self.text = []
+
+    def handle_endtag(self, tag):
+        if tag == 'a' and self.href is not None:
+            label = re.sub(r'\s+', ' ', html.unescape(' '.join(self.text))).strip()
+            self.links.append((self.href, label))
+            self.href = None
+            self.text = []
+        if tag in ('script','style','noscript','svg') and self.skip_depth:
+            self.skip_depth -= 1
+
+    def handle_data(self, data):
+        if self.href is not None and not self.skip_depth:
+            self.text.append(data)
+
+
+def directory_candidates(raw, source, now, final_url):
+    """Cautiously surface *links* from approved official directories.
+
+    No event opening, validity or deadline is inferred. Does not follow links.
+    A qualified editor must visit the original program and verify applicability.
+    """
+    extractor=OpportunityLinkExtractor()
+    try: extractor.feed(raw.decode('utf8', errors='replace'))
+    except Exception: return []
+    terms=source.get('discovery_terms', [])
+    if not terms:return []
+    out=[];used=set()
+    bad=r'\b(privacy|cookies?|contact|login|sign.?in|newsletter|policy|terms of use|about us|faq|all news|press releases?|accessibility|donate|learn more)\b'
+    vague=r'^(apply|apply now|more|view|details|read more|learn more|click here|download|register|sign up|browse|view all|open)$'
+    for href,title in extractor.links:
+        title=title.strip()[:170]
+        if len(title)<15 or len(title)>165 or re.search(vague,title,re.I) or re.search(bad,title,re.I):continue
+        url=urljoin(final_url,href)
+        if not is_trusted(url,source):continue
+        url=url.split('#',1)[0]
+        if url.rstrip('/')==final_url.rstrip('/') or url in used:continue
+        # Require a meaningful topical title, not a generic Apply button or unrelated article.
+        if not any(re.search(r'\b'+re.escape(k)+r'\b',title,re.I) for k in terms):continue
+        if re.search(r'\b(news|story|blog|press|announces?|highlights?|results|winners?|past recipients?)\b',title,re.I):continue
+        # Don't infer an offer from a title alone: this is a *review candidate*.
+        used.add(url)
+        uid='dir_'+hashlib.sha256(url.encode()).hexdigest()[:20]
+        out.append({
+         'id':uid,'title':title,'url':url,
+         'provider':source['name'],'source':source['name'],
+         'country':source.get('country','Worldwide'),
+         'kind':'directory_candidate','opportunity_type':'official_directory_lead',
+         'summary':'Found in an official opportunity directory. Opening, deadline, value, eligibility and current availability have NOT been verified. Open the source before approving.',
+         'published_at':'','found_at':now.date().isoformat(),
+         'review_required':True,'verification_status':'unverified'
+        })
+        if len(out)>=int(source.get('max_directory_candidates') or 6):break
+    return out
+
 def site_digest(raw):
     body = text_only(raw.decode('utf-8', errors='replace'))[:160_000]
     return hashlib.sha256(body.casefold().encode()).hexdigest(), len(body)
@@ -271,7 +340,7 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
     previous = get_json(storage / 'discoveries.json', {'candidates': [], 'page_changes': []})
     # Retrospectively screen previously queued headlines. This removes old
     # non-actionable FTC stories when the updated agent next runs.
-    valid_sources = {s.get('name'): s for s in sources if s.get('mode') == 'rss'}
+    valid_sources = {s.get('name'): s for s in sources if s.get('mode') == 'rss' or (s.get('mode') == 'watch' and s.get('discover_links'))}
     known = {}
     for record in previous.get('candidates', []):
         if not isinstance(record, dict) or not record.get('id') or not record.get('url'):
@@ -279,15 +348,17 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
         parent = valid_sources.get(record.get('source'))
         if not parent or not is_trusted(record['url'], parent):
             continue
-        category = classify_offer(record.get('title', ''), record.get('summary', ''), parent['name'])
-        if not category:
-            continue
-        published_at = record.get('published_at', '')
-        # Legacy items had an original publish date; do not infer it from the
-        # date the Agent happened to discover the item.
-        if not published_at or source_date(published_at, now) is None:
-            continue
-        record['opportunity_type'] = category
+        if parent.get('mode') == 'rss':
+            category = classify_offer(record.get('title', ''), record.get('summary', ''), parent['name'])
+            if not category:continue
+            published_at = record.get('published_at', '')
+            if not published_at or source_date(published_at, now) is None:continue
+            record['opportunity_type'] = category
+        else:
+            # A link from an authorized directory remains a candidate only;
+            # never pretend it was newly opened or verified.
+            if record.get('kind') != 'directory_candidate':continue
+            record['opportunity_type'] = 'official_directory_lead'
         record['review_required'] = True
         known[record['id']] = record
 
@@ -361,7 +432,16 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
                             changes_found += 1
                             seen.add(eid)
                     hashes[sid] = digest
-                    record.update(status='ok', detail='Content monitored; changes are not verified offers')
+                    if source.get('discover_links'):
+                        directory = directory_candidates(raw, source, now, final)
+                        for candidate in directory:
+                            if candidate['id'] not in seen:
+                                known[candidate['id']] = candidate
+                                fresh += 1
+                                seen.add(candidate['id'])
+                        record.update(status='ok', detail=f'Official opportunity directory inspected; {len(directory)} possible links (unverified)')
+                    else:
+                        record.update(status='ok', detail='Content monitored; changes are not verified offers')
             else:
                 raise ValueError('Unknown source mode')
         except Exception as exc:
@@ -385,15 +465,16 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
     )[:300]
     page_changes = [v for v in page_changes if v.get('found_at', '') >= floor][-200:]
     report = {
-        'format': 'HOV-AGENT-1', 'filter_version': '2026-10-actionable-v2',
+        'format': 'HOV-AGENT-1', 'filter_version': '2026-10-actionable-v3-directories',
         'generated_at': now.isoformat(timespec='seconds'),
         'sources_scanned': scanned, 'sources_configured': len(sources),
         'sources_limited': limited, 'source_warnings': warnings,
         'source_health': health,
         'new_candidates': fresh, 'failures': errors,
         'source_changes': changes_found, 'page_changes': page_changes,
+        'sources_failed': len(errors), 'sources_healthy': len([h for h in health if h['status']=='ok']),
         'candidates': candidates,
-        'disclaimer': 'UNVERIFIED actionable candidates only. No guarantee of availability or eligibility. Changed pages and unrelated news are excluded from opportunities.'
+        'disclaimer': 'UNVERIFIED review candidates only. Directory links are not necessarily new or open. Eligibility, deadline, value and availability must be confirmed manually. Ordinary news and changed pages are not verified offers.'
     }
     # Preserve order of arrival (not alphabetical order) when trimming seen IDs.
     # A bounded set prevents the state file from growing forever.
