@@ -28,4 +28,8 @@ for i,r in enumerate(data['listings'],1):
  if not isinstance(r.get('what'),str) or len(r['what'].strip())<20:sys.exit(f'Listing {i}: exact benefit/terms required')
  if not re.fullmatch(r'20\d{2}-\d{2}-\d{2}',str(r.get('reviewed',''))):sys.exit(f'Listing {i}: verification date required')
  if r.get('verified_source') is not True:sys.exit(f'Listing {i}: verified_source must be true')
+ if r.get('review_status')!='verified':sys.exit(f'Listing {i}: editorial review must be verified')
+ for field,minimum in [('eligibility_details',15),('application_steps',10),('terms',15)]:
+  if not isinstance(r.get(field),str) or len(r[field].strip())<minimum:sys.exit(f'Listing {i}: {field} requires {minimum}+ characters')
+ if r.get('deadline') and str(r['deadline'])<__import__('datetime').date.today().isoformat() and status=='program':sys.exit(f'Listing {i}: open listing deadline already passed')
 print(f'Validated {len(data["listings"])} public listings; original source and eligibility still require editorial checks.')

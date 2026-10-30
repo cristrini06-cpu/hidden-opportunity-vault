@@ -367,7 +367,7 @@ def active_innocentive_challenges(raw, source, now, final_url):
           'summary':f'Official directory lists closing date {date.isoformat()} and award: {award_text}. Eligibility and availability need manual confirmation at the source.',
           'deadline':date.isoformat(),'award':award_text,'published_at':'',
           'found_at':now.date().isoformat(),'review_required':True,
-          'verification_status':'unverified'
+          'verification_status':'unverified','priority':'specialist'
         })
     return results[:12]
 
@@ -402,13 +402,112 @@ def bao_current_fund(raw, source, now, final_url):
       'summary':f'Official current-calls page lists {amount.group(1)} and an application deadline of {due.isoformat()} (or until funds are depleted). Restricted eligibility; verify before approval.',
       'deadline':due.isoformat(),'award':amount.group(1), 'published_at':'',
       'found_at':now.date().isoformat(),'review_required':True,
-      'verification_status':'unverified'
+      'verification_status':'unverified','priority':'specialist'
     }]
 
 
+
+
+def trybers_active_campaigns(raw, source, now, final_url):
+    """Product campaigns linked from the official Netherlands front page.
+
+    Registration/selection and potential discounted keep-or-return terms must
+    never be described as a free guaranteed product.
+    """
+    page = raw.decode('utf-8', errors='replace')
+    visible = text_only(page)
+    if not re.search(r'\bActive campaigns\b', visible, re.I):
+        return []
+    parser = OpportunityLinkExtractor()
+    parser.feed(page)
+    out = []
+    seen = set()
+    for href, label in parser.links:
+        url = urljoin(final_url, href).split('#', 1)[0]
+        if not is_trusted(url, source):
+            continue
+        if not re.search(r'/campaigns/[^/?#]{8,}', urlparse(url).path, re.I):
+            continue
+        label = re.sub(r'\s+', ' ', label).strip()
+        if not re.search(r'\bby\s+[A-Za-z0-9]', label, re.I):
+            continue
+        title = re.sub(r'\s+by\s+[A-Za-z0-9À-ž][^|]*$', '', label, flags=re.I).strip()
+        if not (12 <= len(title) <= 150 and len(title.split()) >= 3):
+            continue
+        if match(r'\b(closed|expired|past campaigns|campaigns|browse all|view all)\b', title):
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        out.append({
+            'id': 'product_' + hashlib.sha256(url.encode()).hexdigest()[:20],
+            'title': 'Product testing: ' + title,
+            'url': url, 'provider': source['name'], 'source': source['name'],
+            'country': source.get('country', 'Netherlands'),
+            'kind': 'consumer_product_trial', 'opportunity_type': 'consumer_product_testing',
+            'summary': 'Listed in the official Active campaigns section. Free registration; selection is required. Participants may need to return the product or purchase it at a discount. Verify campaign terms, region and availability.',
+            'found_at': now.date().isoformat(), 'review_required': True,
+            'verification_status': 'unverified', 'priority': 'consumer',
+        })
+    return out[:20]
+
+
+def takepart_active_studies(raw, source, now, final_url):
+    """Specific publicly listed paid-research projects with direct URLs.
+
+    Project/session dates are not interpreted as application deadlines.
+    Older projects remain on the source homepage, so filter by date first.
+    """
+    page = raw.decode('utf-8', errors='replace')
+    visible = text_only(page)
+    if not re.search(r'\bCurrent projects\b', visible, re.I):
+        return []
+    parser = OpportunityLinkExtractor()
+    parser.feed(page)
+    out=[]; seen=set()
+    for href, label in parser.links:
+        url=urljoin(final_url, href).split('#',1)[0]
+        if not is_trusted(url,source) or not re.search(r'^/jobs/[^/]+/?$',urlparse(url).path):
+            continue
+        label=re.sub(r'\s+',' ',label).strip()
+        cash=re.search(r'\$([1-9][0-9]{1,4})(?!\d)',label)
+        # The source publishes US-style dates, which indicate research/session
+        # periods rather than an application deadline.
+        dates=re.findall(r'(?<!\d)(0?[1-9]|1[0-2])/(0?[1-9]|[12]\d|3[01])/(\d{2})(?!\d)',label)
+        if not cash or not dates:
+            continue
+        parsed=[]
+        for mm,dd,yy in dates:
+            try:parsed.append(dt.date(2000+int(yy),int(mm),int(dd)))
+            except ValueError:pass
+        if not parsed or max(parsed)<now.date() or min(parsed)>now.date()+dt.timedelta(days=365):
+            continue
+        if not match(r'\b(research|study|studies|testing|interview|diary|group|survey)\b',label):
+            continue
+        title=re.split(r'\s+\d{1,2}/\d{1,2}/\d{2}\b',label,maxsplit=1)[0]
+        title=re.sub(r'^(?:Online groups and interviews|Online tasks and diary studies|Face.to.face|Focus group)\s+', '',title,flags=re.I).strip()
+        if not (10<=len(title)<=125 and len(title.split())>=2):
+            continue
+        if url in seen:continue
+        seen.add(url)
+        out.append({
+            'id':'research_'+hashlib.sha256(url.encode()).hexdigest()[:20],
+            'title':'Paid research: '+title, 'url':url,
+            'provider':source['name'],'source':source['name'],
+            'country':source.get('country','United States'),
+            'kind':'consumer_paid_study','opportunity_type':'paid_consumer_research',
+            'summary':f'Official current-project listing advertises ${cash.group(1)} for a qualifying research project and shows a session/project date through {max(parsed).isoformat()}. Apply through the official page; eligibility and recruitment status require confirmation.',
+            'award':'$'+cash.group(1), 'event_end':max(parsed).isoformat(),
+            'found_at':now.date().isoformat(), 'review_required':True,
+            'verification_status':'unverified', 'priority':'consumer'
+        })
+    return out[:20]
+
 def specific_page_candidates(raw, source, now, final_url):
     parser = {'innocentive_active_challenges': active_innocentive_challenges,
-              'bao_current_fund': bao_current_fund}.get(source.get('discovery_strategy'))
+              'bao_current_fund': bao_current_fund,
+              'trybers_active_campaigns': trybers_active_campaigns,
+              'takepart_active_studies': takepart_active_studies}.get(source.get('discovery_strategy'))
     return parser(raw,source,now,final_url) if parser else []
 
 
@@ -423,7 +522,7 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
     previous = get_json(storage / 'discoveries.json', {'candidates': [], 'page_changes': []})
     # Retrospectively screen previously queued headlines. This removes old
     # non-actionable FTC stories when the updated agent next runs.
-    valid_sources = {s.get('name'): s for s in sources if s.get('mode') == 'rss'}
+    valid_sources = {s.get('name'): s for s in sources}
     known = {}
     for record in previous.get('candidates', []):
         if not isinstance(record, dict) or not record.get('id') or not record.get('url'):
@@ -437,12 +536,16 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
             published_at = record.get('published_at', '')
             if not published_at or source_date(published_at, now) is None:continue
             record['opportunity_type'] = category
+        if record.get('event_end') and str(record['event_end']) < now.date().isoformat():continue
+        if record.get('deadline') and str(record['deadline']) < now.date().isoformat():continue
         record['review_required'] = True
         known[record['id']] = record
 
     seen = set(state.get('seen_ids', []))
     hashes = dict(state.get('watched_hashes', {}))
     page_changes = list(previous.get('page_changes', []))[-200:]
+    active_specific_ids=set()
+    successful_specific_sources=set()
     errors = []
     warnings = []
     health = []
@@ -494,7 +597,7 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
                     warnings.append(name + ': ' + msg)
                 else:
                     digest, size = site_digest(raw)
-                    if size < 180:
+                    if size < (80 if source.get('discovery_strategy') else 180):
                         raise ValueError('Page returned insufficient text; may require JavaScript or login')
                     if sid in hashes and hashes[sid] != digest:
                         eid = 'changed_' + hashlib.sha256((sid + digest).encode()).hexdigest()[:20]
@@ -512,7 +615,9 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
                     hashes[sid] = digest
                     if source.get('discovery_strategy'):
                         active = specific_page_candidates(raw, source, now, final)
+                        successful_specific_sources.add(name)
                         for candidate in active:
+                            active_specific_ids.add(candidate['id'])
                             known[candidate['id']] = candidate
                             if candidate['id'] not in seen:
                                 fresh += 1
@@ -537,23 +642,30 @@ def scan(sources, storage, now, fetcher=fetch, pause_seconds=0.1):
             time.sleep(pause_seconds)
 
     floor = (now.date() - dt.timedelta(days=90)).isoformat()
+    # Specialist and consumer leads from an available, successfully parsed
+    # source disappear if the official listing no longer contains them.
+    specific_names={s['name'] for s in sources if s.get('discovery_strategy')}
     candidates = sorted(
-        [v for v in known.values() if v.get('found_at', '') >= floor],
-        key=lambda r: (r.get('found_at', ''), r.get('published_at', '')), reverse=True
+        [v for v in known.values() if v.get('found_at', '') >= floor
+         and not (v.get('source') in successful_specific_sources
+                  and v.get('source') in specific_names
+                  and v.get('id') not in active_specific_ids)],
+        key=lambda r: (r.get('priority') == 'consumer',r.get('found_at',''),r.get('published_at','')), reverse=True
     )[:300]
     page_changes = [v for v in page_changes if v.get('found_at', '') >= floor][-200:]
     report = {
-        'format': 'HOV-AGENT-1', 'filter_version': '2026-10-actionable-v4-specific-offers',
+        'format': 'HOV-AGENT-1', 'filter_version': '2026-10-v5-consumer-research-verified-source-paths',
         'generated_at': now.isoformat(timespec='seconds'),
         'sources_scanned': scanned, 'sources_configured': len(sources),
         'sources_limited': limited, 'source_warnings': warnings,
         'source_health': health,
-        'new_candidates': fresh, 'failures': errors,
+        'new_candidates': fresh, 'consumer_candidates': sum(x.get('priority')=='consumer' for x in candidates),
+        'specialist_candidates': sum(x.get('priority')=='specialist' for x in candidates), 'failures': errors,
         'source_changes': changes_found, 'page_changes': page_changes,
         'verification_rule': 'Named opportunity, future deadline, benefit and official source required for specialized page extracts.',
         'sources_failed': len(errors), 'sources_healthy': len([h for h in health if h['status']=='ok']),
         'candidates': candidates,
-        'disclaimer': 'UNVERIFIED review candidates only. Named offers are extracted from official pages with deadline and benefit evidence, but eligibility and availability still require human verification. Generic links, old/closed calls, news and page changes are excluded.'
+        'disclaimer': 'UNVERIFIED candidates only. Consumer testing/research may require selection, payment or product return. Study dates are not application deadlines. Named specialist offers need manual eligibility confirmation. Page changes and generic news are not live offers.'
     }
     # Preserve order of arrival (not alphabetical order) when trimming seen IDs.
     # A bounded set prevents the state file from growing forever.

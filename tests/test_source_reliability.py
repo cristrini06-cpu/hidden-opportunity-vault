@@ -19,8 +19,8 @@ class ReliabilityTests(unittest.TestCase):
     def scan(self, sources, fetcher):
         with tempfile.TemporaryDirectory() as d:
             return m.scan(sources, Path(d), NOW, fetcher=fetcher, pause_seconds=0)
-    def test_registry_71_sources_preserved(self):
-        self.assertEqual(len(CFG['sources']),71)
+    def test_registry_source_count_expanded(self):
+        self.assertEqual(len(CFG['sources']),72)
         self.assertEqual({s['id'] for s in CFG['sources']},len(D) and set(D))
     def test_adidas_is_link_only(self):
         self.assertEqual(D['watch_hov005']['monitor_policy'], 'link_only')

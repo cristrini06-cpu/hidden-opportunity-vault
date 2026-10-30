@@ -335,7 +335,9 @@
       "country": "Netherlands",
       "allowed_hosts": [
         "www.trybers.com"
-      ]
+      ],
+      "discovery_strategy": "trybers_active_campaigns",
+      "priority": "consumer"
     },
     {
       "id": "watch_hov028",
@@ -560,7 +562,7 @@
     },
     {
       "id": "watch_hov064",
-      "name": "Brampton Writer in Residence",
+      "name": "Brampton Arts Current Calls",
       "mode": "watch",
       "url": "https://bramptonartsorg.ca/opportunities/open-calls/",
       "country": "Canada",
@@ -738,8 +740,20 @@
       "allowed_hosts": [
         "www.grab.com"
       ]
+    },
+    {
+      "id": "takepart_paid_research_current",
+      "name": "Take Part Current Paid Research",
+      "mode": "watch",
+      "url": "https://www.takepartinresearch.com/",
+      "allowed_hosts": [
+        "takepartinresearch.com"
+      ],
+      "country": "United States",
+      "priority": "consumer",
+      "discovery_strategy": "takepart_active_studies"
     }
   ],
   "editorial_policy": "public original sources only, monitor changes and collect leads; no automatic publication",
-  "revision": "2026-10-29-global-opportunity-directory-r1"
+  "revision": "2026-10-v5-consumer-research-source-specific"
 }

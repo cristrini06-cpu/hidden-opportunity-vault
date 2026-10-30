@@ -1,0 +1,26 @@
+HIDDEN OPPORTUNITY VAULT — EDITOR/PUBLISHING QA
+
+Completed in an isolated browser/container (not on the owner's GitHub account):
+✓ App JavaScript syntax check (Node.js)
+✓ 31 existing scanner regression tests
+✓ Homepage loads with 40 department cards
+✓ InnoCentive sample lead prefills cash-prize type, cash-award benefit,
+  advertised pool and stated deadline
+✓ 20 reward-type choices, 17 benefits, 15 eligibility audience types
+✓ Unverified program cannot be saved as publishable
+✓ Draft saves locally; export produces zero public records
+✓ Edited draft can be completed with detailed terms and eligibility
+✓ Verified edit exports as approved.json with one full record
+✓ Python validator accepts that record
+✓ Python validator rejects it when important terms are missing
+✓ Representative category card navigation (first, several middle, last)
+✓ Backup file download and Back to Top control
+✓ Spanish editor heading and English switchback
+✓ Mobile loads all 40 department cards
+✓ No uncaught browser JS exceptions
+
+Not tested / cannot certify from this package alone:
+- Live GitHub Pages deployment or authenticated owner workflows
+- Actual third-party opportunity availability or eligibility
+- Browser visitor-to-public publishing end-to-end on the live domain
+- Secure administrator login (not present in GitHub Pages static architecture)
