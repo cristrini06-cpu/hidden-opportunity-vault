@@ -1,0 +1,16 @@
+GOOGLE SEARCH CONSOLE — SIMPLE SETUP
+
+1. Visit https://search.google.com/search-console and sign in with a Google account.
+2. Add a URL-prefix property: https://cristrini06-cpu.github.io/hidden-opportunity-vault/
+3. Select the HTML file upload verification method. Download Google's exact verification file and add it to the ROOT of your GitHub repository. Commit. Click Verify in Search Console.
+4. Under Sitemaps, submit: sitemap.xml
+5. Use URL inspection on the homepage and a category page. Ask Google to request indexing if available.
+
+Prepared for search engines:
+- robots.txt (note: on GitHub project sites only a host-root robots.txt is authoritative)
+- sitemap.xml
+- category pages with plain HTML, unique titles, canonical URLs and links
+- selected full information pages for 34 richer entries (some may be noindex)
+- Open Graph metadata and basic schema.org WebSite/WebPage data
+
+Google decides if and when to index or rank any page. A sitemap is not a guarantee of ranking, appearing 'in front', or receiving visitors. Valuable current content and credible links matter most.

@@ -1,72 +1,22 @@
-HIDDEN OPPORTUNITY VAULT — GLOBAL DISCOVERY EDITION
-Complete consolidated website + Daily Discovery Agent
-Release: October 29, 2026
-===================================================
+HIDDEN OPPORTUNITY VAULT — CUSTOMER EDITION
 
-THIS IS THE COMPLETE REPLACEMENT PACKAGE, NOT A PATCH.
+ONE FULL REPLACEMENT ZIP. NO DAILY AGENT. NO GOOGLE SHEETS.
 
-OPEN THE SHOP ON YOUR WINDOWS COMPUTER:
-  1. Right-click the ZIP -> Extract All.
-  2. Double-click OPEN_HIDDEN_OPPORTUNITY_VAULT.html.
-  3. The whole shop (40 departments, 120 research listings, saved workspace,
-     search, alerts, clock and navigation) opens locally.
-  4. Local files will not run automatic internet scans. Live automation only
-     works on the deployed GitHub Pages version.
+1. Extract the ZIP. Open index.html to preview in your browser.
+2. Upload THE CONTENTS of the extracted folder (not the ZIP or an outer folder) to your existing GitHub repository root:
+   https://github.com/cristrini06-cpu/hidden-opportunity-vault/upload/main
+3. Commit directly to main.
+4. The updated publish-website workflow deploys the customer site. The previous daily-discovery workflow is replaced with an inert retired workflow (no automatic schedule).
+5. Refresh the site: https://cristrini06-cpu.github.io/hidden-opportunity-vault/
+6. To let Google discover it: open https://search.google.com/search-console and add a URL-prefix property for https://cristrini06-cpu.github.io/hidden-opportunity-vault/ . Verify using the HTML file upload method and then submit sitemap.xml using the Sitemaps screen.
 
-REPLACE THE ONLINE SITE (keep the same GitHub repository):
-  1. DO NOT delete your GitHub repository or create a new one.
-  2. Keep your existing agent/data folder in GitHub. This ZIP deliberately
-     does NOT include generated agent/data JSON, so upload will not reset
-     your live history, discoveries, scan status or previously seen links.
-  3. Unzip this package. OPEN the extracted folder; select its CONTENTS
-     (index.html, the .github folder, agent folder, tests folder and TXT docs).
-     Do not drag the outer extracted folder itself into GitHub.
-  4. Open https://github.com/cristrini06-cpu/hidden-opportunity-vault/upload/main
-  5. Drag selected CONTENTS onto the GitHub page.
-     Expected root paths include: index.html, agent/monitor.py,
-     agent/source_registry.json and .github/workflows/daily-discovery.yml.
-     There must be NO extra enclosing folder at the start of these paths.
-  6. Click Commit changes -> Commit directly to main.
-  7. Open GitHub Actions -> Daily Discovery Agent -> Run workflow -> main.
-  8. After the workflow succeeds, refresh the live site:
-     https://cristrini06-cpu.github.io/hidden-opportunity-vault/
-     On the Agent panel click Load Latest Report.
+WHAT WORKS:
+40 category cards, 120 existing catalogued listings, search, filters, saved favorites, application notes, exports, multilingual UI, featured finds, welcome popup, recorded-visit counter (live site only), 40 indexable static category pages, a public listings index and 34 detailed opportunity articles.
 
-WHAT IS IMPROVED:
-  - Entire original 40-department, 120-listing catalogue and colourful layout.
-  - Back, Back to Top, Save Backup, Export, Homepage Discovery Signal, Agent
-    clock/countdown, six languages, mobile navigation and review workflow.
-  - Stricter rejection of ordinary news and government enforcement stories.
-  - 71 configured original official sources retained.
-  - Better handling for JavaScript-dependent and access-restricted sources.
-  - Source-health details now viewable in the Agent panel.
-  - Five approved official *directory pages* now yield potential program links
-    for review (when visible in their publicly accessible page content).
-    These links are NOT claims that new application windows have opened.
-  - No automatic approval/publishing of unverified opportunities.
-  - Real completed scans with no leads are described accurately.
+NO FALSE CLAIMS:
+The visit counter is a public third-party HIT counter; it counts recorded visits, not verified unique people. Refreshing the page in one browser session will not increment repeatedly. It may not count bots consistently and may be unavailable. It never displays fake numbers.
+The old scanner is not part of this edition. Static listings are not real-time verified offers. Source terms may change.
 
-LIMITATIONS — READ BEFORE SELLING:
-  - The scanning system is NOT a general AI web search or complete world scan.
-    It monitors a limited set of configured sources, and access restrictions,
-    anti-bot pages or JavaScript-only sites may still produce limited coverage.
-  - A technically successful scan does NOT prove every source succeeded.
-  - Newly extracted directory links are UNVERIFIED, may be old, and must have
-    eligibility, deadline, provider and availability checked manually.
-  - Admin approvals in the browser are stored LOCALLY on that browser;
-    they are not globally published for all visitors automatically.
-  - The existing public catalogue may contain outdated program details:
-    confirm current terms against official websites.
-  - The GitHub Actions schedule is a target; executions can be delayed.
-  - This update has passed offline tests and browser QA; a new live GitHub
-    run is still necessary to validate network-source performance.
-
-TROUBLESHOOTING:
-  - If the old edition appears, press Ctrl+F5 and check the left logo label:
-    GLOBAL DISCOVERY EDITION · OCT 29.
-  - If no new leads appear, this can be legitimate; review Agent source
-    health rather than assuming scanning is inactive.
-  - If source failures persist, do not try to bypass access restrictions.
-    They require editorial review, a replacement official feed, or a partner API.
-
-For technical info read AGENT_SETUP.txt and QA_REPORT.txt.
+NOTE FOR THE OWNER:
+This ZIP does not include the old agent/data folder. Uploading it will not delete old GitHub files. The scanner workflow of the same path is replaced to remove its schedule. Existing prior data in the repository may remain but the customer site no longer reads agent reports.
+If you later want to maintain the catalogue, request a fresh consolidated ZIP or edit the original opportunity data in index.html. The website does not offer a public admin editor or collect visitor submissions.

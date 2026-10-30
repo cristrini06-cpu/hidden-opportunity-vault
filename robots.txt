@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cristrini06-cpu.github.io/hidden-opportunity-vault/sitemap.xml
