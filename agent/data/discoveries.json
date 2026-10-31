@@ -1,7 +1,7 @@
 {
   "format": "HOV-AGENT-1",
   "filter_version": "2026-10-v5-consumer-research-verified-source-paths",
-  "generated_at": "2026-10-30T10:09:11+00:00",
+  "generated_at": "2026-10-31T09:57:08+00:00",
   "sources_scanned": 58,
   "sources_configured": 72,
   "sources_limited": 2,
@@ -16,7 +16,7 @@
       "mode": "rss",
       "url": "https://www.ftc.gov/feeds/press-release-consumer-protection.xml",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Official feed parsed; candidates are unverified",
       "final_url": "https://www.ftc.gov/feeds/press-release-consumer-protection.xml"
     },
@@ -26,7 +26,7 @@
       "mode": "rss",
       "url": "https://www.nasa.gov/feed/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Official feed parsed; candidates are unverified",
       "final_url": "https://www.nasa.gov/feed/"
     },
@@ -36,7 +36,7 @@
       "mode": "watch",
       "url": "https://www.cotyinstitute.com/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.cotyinstitute.com/"
     },
@@ -46,7 +46,7 @@
       "mode": "watch",
       "url": "https://www.bootsvolunteers.com/what-we-do",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.bootsvolunteers.com/what-we-do"
     },
@@ -56,7 +56,7 @@
       "mode": "watch",
       "url": "https://producttesting.adidas.com/",
       "status": "limited",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Interactive page: link reachable, but active offers cannot be extracted by this static scanner",
       "final_url": "https://producttesting.adidas.com/"
     },
@@ -66,7 +66,7 @@
       "mode": "watch",
       "url": "https://sgsclinicalstudies.com/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://sgsclinicalstudies.com/"
     },
@@ -76,7 +76,7 @@
       "mode": "watch",
       "url": "https://www.crcresearch.com/en/participate",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.crcresearch.com/en/participate"
     },
@@ -86,7 +86,7 @@
       "mode": "watch",
       "url": "https://www.canadapost-postescanada.ca/cpc/en/our-company/research-panel.page",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.canadapost-postescanada.ca/cpc/en/our-company/research-panel.page"
     },
@@ -96,7 +96,7 @@
       "mode": "watch",
       "url": "https://userresearch.google.com/edu/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://userresearch.google.com/edu/"
     },
@@ -106,7 +106,7 @@
       "mode": "watch",
       "url": "https://www.ea.com/en-ca/playtesting",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.ea.com/en-ca/playtesting"
     },
@@ -116,7 +116,7 @@
       "mode": "watch",
       "url": "https://www.playstation.com/en-ca/beta-program-at-playstation/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.playstation.com/en-ca/beta-program-at-playstation/"
     },
@@ -126,7 +126,7 @@
       "mode": "watch",
       "url": "https://1iota.com/",
       "status": "limited",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Interactive page: link reachable, but active offers cannot be extracted by this static scanner",
       "final_url": "https://1iota.com/"
     },
@@ -136,7 +136,7 @@
       "mode": "watch",
       "url": "https://tpl.ca/using-the-library/services/map/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://tpl.ca/using-the-library/services/map/"
     },
@@ -146,7 +146,7 @@
       "mode": "watch",
       "url": "https://tpl.ca/using-the-library/services/borrow-a-musical-instrument/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://tpl.ca/using-the-library/services/borrow-a-musical-instrument/"
     },
@@ -156,7 +156,7 @@
       "mode": "watch",
       "url": "https://montreal.ca/en/services/borrow-pass-library-to-visit-museums",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://montreal.ca/en/services/borrow-pass-library-to-visit-museums"
     },
@@ -166,7 +166,7 @@
       "mode": "watch",
       "url": "https://parks.canada.ca/voyage-travel/admission/cultur",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://parks.canada.ca/voyage-travel/admission/cultur"
     },
@@ -176,7 +176,7 @@
       "mode": "watch",
       "url": "https://www.changiairport.com/en/experience/tours/free-singapore-tour.html",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.changiairport.com/en/experience/tours/free-singapore-tour.html"
     },
@@ -186,7 +186,7 @@
       "mode": "watch",
       "url": "https://www.delta.com/us/en/skymiles/medallion-program/status-match-challenge",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.delta.com/us/en/skymiles/medallion-program/status-match-challenge"
     },
@@ -196,7 +196,7 @@
       "mode": "watch",
       "url": "https://www.usa.gov/unclaimed-money",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.usa.gov/unclaimed-money"
     },
@@ -206,7 +206,7 @@
       "mode": "watch",
       "url": "https://www.alberta.ca/unclaimed-property",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.alberta.ca/unclaimed-property"
     },
@@ -216,7 +216,7 @@
       "mode": "watch",
       "url": "https://www.bcb.gov.br/meubc/faqs/p/como-consultar-valores-de-pessoas-fisicas-e-juridicas",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Page returned insufficient text; may require JavaScript or login",
       "final_url": "https://www.bcb.gov.br/meubc/faqs/p/como-consultar-valores-de-pessoas-fisicas-e-juridicas"
     },
@@ -226,7 +226,7 @@
       "mode": "watch",
       "url": "https://sec.gov.ng/for-investors/keep-track-of-circulars/revamped-e-dividend-mandate-management-system-portal/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://sec.gov.ng/for-investors/keep-track-of-circulars/revamped-e-dividend-mandate-management-system-portal/"
     },
@@ -236,7 +236,7 @@
       "mode": "watch",
       "url": "https://www.ftc.gov/enforcement/refunds",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.ftc.gov/enforcement/refunds"
     },
@@ -246,7 +246,7 @@
       "mode": "watch",
       "url": "https://www.apple.com/ca/recycling/",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Page returned insufficient text; may require JavaScript or login",
       "final_url": "https://www.apple.com/ca/recycling/"
     },
@@ -256,7 +256,7 @@
       "mode": "watch",
       "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/"
     },
@@ -266,7 +266,7 @@
       "mode": "watch",
       "url": "https://fellowships.si.edu/SARF",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 403 (access restricted; do not bypass)"
     },
     {
@@ -275,7 +275,7 @@
       "mode": "watch",
       "url": "https://aws.amazon.com/startups/credits",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://aws.amazon.com/startups/credits/"
     },
@@ -285,7 +285,7 @@
       "mode": "watch",
       "url": "https://www.ontario.ca/page/business/start/get-funding-or-more-help",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.ontario.ca/page/business/start/get-funding-or-more-help"
     },
@@ -295,7 +295,7 @@
       "mode": "watch",
       "url": "https://www.brampton.ca/EN/Business/BEC/Pages/GrantsFunding.aspx",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.brampton.ca/EN/Business/BEC/Pages/GrantsFunding.aspx"
     },
@@ -305,7 +305,7 @@
       "mode": "watch",
       "url": "https://treatx.bio/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://treatx.bio/"
     },
@@ -315,7 +315,7 @@
       "mode": "watch",
       "url": "https://www.trybers.com/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Named actionable opportunities checked; 4 currently listed (not yet verified by editor)",
       "final_url": "https://www.trybers.com/"
     },
@@ -325,7 +325,7 @@
       "mode": "watch",
       "url": "https://www.library.nashville.org/services/library-things",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 403 (access restricted; do not bypass)"
     },
     {
@@ -334,7 +334,7 @@
       "mode": "watch",
       "url": "https://www.nps.gov/articles/000/250-for-250.htm",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.nps.gov/articles/000/250-for-250.htm"
     },
@@ -344,7 +344,7 @@
       "mode": "watch",
       "url": "https://www.turkishairlines.com/en-ca/flights/stopover/",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "The read operation timed out"
     },
     {
@@ -353,7 +353,7 @@
       "mode": "watch",
       "url": "https://www.etihad.com/en-us/abu-dhabi/stopover",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "The read operation timed out"
     },
     {
@@ -362,7 +362,7 @@
       "mode": "watch",
       "url": "https://www.qatarairways.com/en/help/transit-accommodation-v4.html",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 403 (access restricted; do not bypass)"
     },
     {
@@ -371,7 +371,7 @@
       "mode": "watch",
       "url": "https://www.changiairport.com/en/experience/transit/transit-dapat-lebih.html",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 404 (missing or moved page)"
     },
     {
@@ -380,7 +380,7 @@
       "mode": "watch",
       "url": "https://promo.united.com/statusmatch/?env=prd&pid=SM2026",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "The read operation timed out"
     },
     {
@@ -389,7 +389,7 @@
       "mode": "watch",
       "url": "https://www.unclaimedproperties.bankofcanada.ca/app/claim-search",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Page returned insufficient text; may require JavaScript or login",
       "final_url": "https://www.unclaimedproperties.bankofcanada.ca/app/claim-search"
     },
@@ -399,7 +399,7 @@
       "mode": "watch",
       "url": "https://content.naic.org/article/naic-life-insurance-policy-locator-tool-helps-match-consumers-more-16-billion-lost-and-unclaimed",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 403 (access restricted; do not bypass)"
     },
     {
@@ -408,7 +408,7 @@
       "mode": "watch",
       "url": "https://moneysmart.gov.au/find-unclaimed-money",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 403 (access restricted; do not bypass)"
     },
     {
@@ -417,7 +417,7 @@
       "mode": "watch",
       "url": "https://www.fsca.co.za/Unclaimed-Benefits-Search/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.fsca.co.za/Unclaimed-Benefits-Search/"
     },
@@ -427,7 +427,7 @@
       "mode": "watch",
       "url": "https://udgam.rbi.org.in/unclaimed-deposits/#/login",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "<urlopen error timed out>"
     },
     {
@@ -436,7 +436,7 @@
       "mode": "watch",
       "url": "https://www.gov.uk/government/statistical-data-sets/unclaimed-estates-list",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.gov.uk/government/statistical-data-sets/unclaimed-estates-list"
     },
@@ -446,7 +446,7 @@
       "mode": "watch",
       "url": "https://www.durp.themlc.com/artist-lookup",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.durp.themlc.com/artist-lookup"
     },
@@ -456,7 +456,7 @@
       "mode": "watch",
       "url": "https://www.ofcom.org.uk/phones-and-broadband/service-quality/automatic-compensation-need-know",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 403 (access restricted; do not bypass)"
     },
     {
@@ -465,7 +465,7 @@
       "mode": "watch",
       "url": "https://www.ofgem.gov.uk/your-energy-supply/problems-your-energy-supply/check-if-you-can-get-payment-power-cut",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.ofgem.gov.uk/your-energy-supply/problems-your-energy-supply/check-if-you-can-get-payment-power-cut"
     },
@@ -475,7 +475,7 @@
       "mode": "watch",
       "url": "https://software.nasa.gov/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://software.nasa.gov/"
     },
@@ -485,7 +485,7 @@
       "mode": "watch",
       "url": "https://technology.nasa.gov/license",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://technology.nasa.gov/license"
     },
@@ -495,7 +495,7 @@
       "mode": "watch",
       "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-orbit-challenge-2027/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-orbit-challenge-2027/"
     },
@@ -505,7 +505,7 @@
       "mode": "watch",
       "url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/The_Open_Space_Innovation_Platform_OSIP",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/The_Open_Space_Innovation_Platform_OSIP"
     },
@@ -514,9 +514,9 @@
       "name": "InnoCentive Open Challenges",
       "mode": "watch",
       "url": "https://www.innocentive.com/challenges/",
-      "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
-      "detail": "Named actionable opportunities checked; 6 currently listed (not yet verified by editor)",
+      "status": "failed",
+      "checked_at": "2026-10-31T09:57:08+00:00",
+      "detail": "Page returned insufficient text; may require JavaScript or login",
       "final_url": "https://www.innocentive.com/challenges/"
     },
     {
@@ -525,7 +525,7 @@
       "mode": "watch",
       "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility"
     },
@@ -535,7 +535,7 @@
       "mode": "watch",
       "url": "https://bramptonartsorg.ca/opportunities/open-calls/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Named actionable opportunities checked; 1 currently listed (not yet verified by editor)",
       "final_url": "https://bramptonartsorg.ca/opportunities/open-calls/"
     },
@@ -545,7 +545,7 @@
       "mode": "watch",
       "url": "https://www.ontario.ca/page/available-funding-opportunities-ontario-government",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.ontario.ca/page/available-funding-opportunities-ontario-government"
     },
@@ -555,7 +555,7 @@
       "mode": "watch",
       "url": "https://innovation.canada.ca/",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
     },
     {
@@ -564,7 +564,7 @@
       "mode": "watch",
       "url": "https://www.skillsbuild.org/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.skillsbuild.org/"
     },
@@ -574,7 +574,7 @@
       "mode": "watch",
       "url": "https://www.microsoft.com/en-ca/microsoft-learn",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.microsoft.com/en-ca/microsoft-learn"
     },
@@ -584,7 +584,7 @@
       "mode": "watch",
       "url": "https://www.yes.on.ca/yesnetdigital/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.yes.on.ca/yesnetdigital/"
     },
@@ -594,7 +594,7 @@
       "mode": "watch",
       "url": "https://www.saveonenergy.ca/For-Your-Home",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.saveonenergy.ca/For-Your-Home"
     },
@@ -604,7 +604,7 @@
       "mode": "watch",
       "url": "https://youth.europa.eu/discovereu_en",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://youth.europa.eu/discovereu_en"
     },
@@ -614,7 +614,7 @@
       "mode": "watch",
       "url": "https://www.purina.co.uk/your-purina",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.purina.co.uk/your-purina"
     },
@@ -624,7 +624,7 @@
       "mode": "watch",
       "url": "https://vista-pets.com/en",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://vista-pets.com/en"
     },
@@ -634,7 +634,7 @@
       "mode": "watch",
       "url": "https://www.petsafe.com/about-us/joinpanel",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.petsafe.com/about-us/joinpanel"
     },
@@ -643,9 +643,9 @@
       "name": "Animora Pet Tester Program",
       "mode": "watch",
       "url": "https://animora.ca/en/animora-tester-program/",
-      "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
-      "detail": "Content monitored; changes are not verified offers",
+      "status": "failed",
+      "checked_at": "2026-10-31T09:57:08+00:00",
+      "detail": "Page returned insufficient text; may require JavaScript or login",
       "final_url": "https://animora.ca/en/animora-tester-program/"
     },
     {
@@ -654,7 +654,7 @@
       "mode": "watch",
       "url": "https://shanzinaturals.co.uk/pages/shanzi-naturals-product-testers-apply-to-test-natural-pet-products",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 401 (access restricted; do not bypass)"
     },
     {
@@ -663,7 +663,7 @@
       "mode": "watch",
       "url": "https://petfood.symrise.com/what-we-offer/palatability-measurement-with-panelis/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://petfood.symrise.com/what-we-offer/palatability-measurement-with-panelis/"
     },
@@ -673,7 +673,7 @@
       "mode": "watch",
       "url": "https://www.tesco.com/help/pages/clubcard-faqs/clubcard-reward-partners/using-clubcard-vouchers-with-reward-partners",
       "status": "failed",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "HTTP 403 (access restricted; do not bypass)"
     },
     {
@@ -682,7 +682,7 @@
       "mode": "watch",
       "url": "https://www.lidl.co.uk/c/lidl-plus-points/s10093518",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.lidl.co.uk/c/lidl-plus-points/s10093518"
     },
@@ -692,7 +692,7 @@
       "mode": "watch",
       "url": "https://onepass.com.au/benefits",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://onepass.com.au/benefits"
     },
@@ -702,7 +702,7 @@
       "mode": "watch",
       "url": "https://www.grab.com/inside-grab/stories/grabrewards-grabcoins-earn-savings-redeem/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
+      "checked_at": "2026-10-31T09:57:08+00:00",
       "detail": "Content monitored; changes are not verified offers",
       "final_url": "https://www.grab.com/inside-grab/stories/grabrewards-grabcoins-earn-savings-redeem/"
     },
@@ -712,13 +712,13 @@
       "mode": "watch",
       "url": "https://www.takepartinresearch.com/",
       "status": "ok",
-      "checked_at": "2026-10-30T10:09:11+00:00",
-      "detail": "Named actionable opportunities checked; 4 currently listed (not yet verified by editor)",
+      "checked_at": "2026-10-31T09:57:08+00:00",
+      "detail": "Named actionable opportunities checked; 5 currently listed (not yet verified by editor)",
       "final_url": "https://www.takepartinresearch.com/"
     }
   ],
-  "new_candidates": 8,
-  "consumer_candidates": 8,
+  "new_candidates": 1,
+  "consumer_candidates": 9,
   "specialist_candidates": 7,
   "failures": [
     "Brazil Valores a Receber: Page returned insufficient text; may require JavaScript or login",
@@ -735,11 +735,13 @@
     "Australia Unclaimed Money Search: HTTP 403 (access restricted; do not bypass)",
     "India RBI UDGAM: <urlopen error timed out>",
     "UK Broadband Auto Compensation: HTTP 403 (access restricted; do not bypass)",
+    "InnoCentive Open Challenges: Page returned insufficient text; may require JavaScript or login",
     "Innovation Canada Business Benefits: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+    "Animora Pet Tester Program: Page returned insufficient text; may require JavaScript or login",
     "Shanzi Naturals Pet Testers: HTTP 401 (access restricted; do not bypass)",
     "Tesco Clubcard — 2× Reward Partner Value: HTTP 403 (access restricted; do not bypass)"
   ],
-  "source_changes": 11,
+  "source_changes": 12,
   "page_changes": [
     {
       "id": "changed_e4287c299678827c391e",
@@ -1280,11 +1282,131 @@
       "kind": "page_changed",
       "found_at": "2026-10-30",
       "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_b242550f4515573d4999",
+      "title": "Page change: SGS Clinical Studies",
+      "url": "https://sgsclinicalstudies.com/",
+      "source": "SGS Clinical Studies",
+      "country": "Worldwide",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_38ec3fecf431482e866e",
+      "title": "Page change: Toronto Public Library Cultural Pass",
+      "url": "https://tpl.ca/using-the-library/services/map/",
+      "source": "Toronto Public Library Cultural Pass",
+      "country": "Canada",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_90eb19ccdf4662ec60cd",
+      "title": "Page change: Toronto Musical Instrument Lending",
+      "url": "https://tpl.ca/using-the-library/services/borrow-a-musical-instrument/",
+      "source": "Toronto Musical Instrument Lending",
+      "country": "Canada",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_c2bd04691e2177361903",
+      "title": "Page change: Alberta Unclaimed Property",
+      "url": "https://www.alberta.ca/unclaimed-property",
+      "source": "Alberta Unclaimed Property",
+      "country": "Canada",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_adfeb266e1664319f81d",
+      "title": "Page change: FTC Active Refund Programs",
+      "url": "https://www.ftc.gov/enforcement/refunds",
+      "source": "FTC Active Refund Programs",
+      "country": "United States",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_934efff605d2fa877377",
+      "title": "Page change: NASA Orbital Clarity Challenge",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/",
+      "source": "NASA Orbital Clarity Challenge",
+      "country": "United States",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_49a1e93310c8e4d0a973",
+      "title": "Page change: Trybers Product Tests",
+      "url": "https://www.trybers.com/",
+      "source": "Trybers Product Tests",
+      "country": "Netherlands",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_75749d9adffcaca937e4",
+      "title": "Page change: NASA ORBIT Challenge 2027",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-orbit-challenge-2027/",
+      "source": "NASA ORBIT Challenge 2027",
+      "country": "United States",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_cdc91459b5e3ab939b8c",
+      "title": "Page change: ESA Open Space Innovation Platform",
+      "url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/The_Open_Space_Innovation_Platform_OSIP",
+      "source": "ESA Open Space Innovation Platform",
+      "country": "Europe",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_2576472a6d1b5684074d",
+      "title": "Page change: Microsoft Learn",
+      "url": "https://www.microsoft.com/en-ca/microsoft-learn",
+      "source": "Microsoft Learn",
+      "country": "Worldwide",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_8eac8d8366800b800b8c",
+      "title": "Page change: PetSafe Product Testing Panel",
+      "url": "https://www.petsafe.com/about-us/joinpanel",
+      "source": "PetSafe Product Testing Panel",
+      "country": "United States",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
+    },
+    {
+      "id": "changed_c1801bc097267f4e4e4f",
+      "title": "Page change: Take Part Current Paid Research",
+      "url": "https://www.takepartinresearch.com/",
+      "source": "Take Part Current Paid Research",
+      "country": "United States",
+      "kind": "page_changed",
+      "found_at": "2026-10-31",
+      "summary": "Source page changed; no new reward or eligibility is established."
     }
   ],
   "verification_rule": "Named opportunity, future deadline, benefit and official source required for specialized page extracts.",
-  "sources_failed": 17,
-  "sources_healthy": 53,
+  "sources_failed": 19,
+  "sources_healthy": 51,
   "candidates": [
     {
       "id": "product_5e8de319e91d0eeb8d19",
@@ -1296,7 +1418,7 @@
       "kind": "consumer_product_trial",
       "opportunity_type": "consumer_product_testing",
       "summary": "Listed in the official Active campaigns section. Free registration; selection is required. Participants may need to return the product or purchase it at a discount. Verify campaign terms, region and availability.",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
@@ -1311,7 +1433,7 @@
       "kind": "consumer_product_trial",
       "opportunity_type": "consumer_product_testing",
       "summary": "Listed in the official Active campaigns section. Free registration; selection is required. Participants may need to return the product or purchase it at a discount. Verify campaign terms, region and availability.",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
@@ -1326,7 +1448,7 @@
       "kind": "consumer_product_trial",
       "opportunity_type": "consumer_product_testing",
       "summary": "Listed in the official Active campaigns section. Free registration; selection is required. Participants may need to return the product or purchase it at a discount. Verify campaign terms, region and availability.",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
@@ -1341,7 +1463,7 @@
       "kind": "consumer_product_trial",
       "opportunity_type": "consumer_product_testing",
       "summary": "Listed in the official Active campaigns section. Free registration; selection is required. Participants may need to return the product or purchase it at a discount. Verify campaign terms, region and availability.",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
@@ -1358,7 +1480,7 @@
       "summary": "Official current-project listing advertises $80 for a qualifying research project and shows a session/project date through 2026-11-04. Apply through the official page; eligibility and recruitment status require confirmation.",
       "award": "$80",
       "event_end": "2026-11-04",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
@@ -1375,7 +1497,7 @@
       "summary": "Official current-project listing advertises $205 for a qualifying research project and shows a session/project date through 2026-11-13. Apply through the official page; eligibility and recruitment status require confirmation.",
       "award": "$205",
       "event_end": "2026-11-13",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
@@ -1392,7 +1514,7 @@
       "summary": "Official current-project listing advertises $150 for a qualifying research project and shows a session/project date through 2026-12-31. Apply through the official page; eligibility and recruitment status require confirmation.",
       "award": "$150",
       "event_end": "2026-12-31",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
@@ -1409,10 +1531,45 @@
       "summary": "Official current-project listing advertises $150 for a qualifying research project and shows a session/project date through 2026-12-31. Apply through the official page; eligibility and recruitment status require confirmation.",
       "award": "$150",
       "event_end": "2026-12-31",
-      "found_at": "2026-10-30",
+      "found_at": "2026-10-31",
       "review_required": true,
       "verification_status": "unverified",
       "priority": "consumer"
+    },
+    {
+      "id": "research_5ff85c5b3c58eb75c28d",
+      "title": "Paid research: Socializing Research",
+      "url": "https://www.takepartinresearch.com/jobs/socializing-research/",
+      "provider": "Take Part Current Paid Research",
+      "source": "Take Part Current Paid Research",
+      "country": "United States",
+      "kind": "consumer_paid_study",
+      "opportunity_type": "paid_consumer_research",
+      "summary": "Official current-project listing advertises $100 for a qualifying research project and shows a session/project date through 2026-11-16. Apply through the official page; eligibility and recruitment status require confirmation.",
+      "award": "$100",
+      "event_end": "2026-11-16",
+      "found_at": "2026-10-31",
+      "review_required": true,
+      "verification_status": "unverified",
+      "priority": "consumer"
+    },
+    {
+      "id": "program_0fdbc03a250f7a6c74a1",
+      "title": "Call for 2026 BAO Professional Development Fund",
+      "url": "https://bramptonartsorg.ca/opportunities/open-calls/",
+      "provider": "Brampton Arts Current Calls",
+      "source": "Brampton Arts Current Calls",
+      "country": "Canada",
+      "kind": "named_current_grant",
+      "opportunity_type": "arts_professional_development_fund",
+      "summary": "Official current-calls page lists up to $400.00 and an application deadline of 2026-11-30 (or until funds are depleted). Restricted eligibility; verify before approval.",
+      "deadline": "2026-11-30",
+      "award": "up to $400.00",
+      "published_at": "",
+      "found_at": "2026-10-31",
+      "review_required": true,
+      "verification_status": "unverified",
+      "priority": "specialist"
     },
     {
       "id": "challenge_72d9d977cd474b3eb7aa",
@@ -1516,24 +1673,6 @@
       "summary": "Official directory lists closing date 2026-12-21 and award: Collaboration with EDGE Group. Eligibility and availability need manual confirmation at the source.",
       "deadline": "2026-12-21",
       "award": "Collaboration with EDGE Group",
-      "published_at": "",
-      "found_at": "2026-10-30",
-      "review_required": true,
-      "verification_status": "unverified",
-      "priority": "specialist"
-    },
-    {
-      "id": "program_0fdbc03a250f7a6c74a1",
-      "title": "Call for 2026 BAO Professional Development Fund",
-      "url": "https://bramptonartsorg.ca/opportunities/open-calls/",
-      "provider": "Brampton Arts Current Calls",
-      "source": "Brampton Arts Current Calls",
-      "country": "Canada",
-      "kind": "named_current_grant",
-      "opportunity_type": "arts_professional_development_fund",
-      "summary": "Official current-calls page lists up to $400.00 and an application deadline of 2026-11-30 (or until funds are depleted). Restricted eligibility; verify before approval.",
-      "deadline": "2026-11-30",
-      "award": "up to $400.00",
       "published_at": "",
       "found_at": "2026-10-30",
       "review_required": true,
