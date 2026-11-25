@@ -1,12 +1,12 @@
 {
   "format": "HOV-STATUS-1",
-  "state": "failed",
-  "updated_at": "2026-11-24T10:25:33+00:00",
-  "started_at": "2026-11-24T10:25:29+00:00",
+  "state": "running",
+  "updated_at": "2026-11-25T10:26:35+00:00",
+  "started_at": "2026-11-25T10:26:35+00:00",
   "finished_at": "2026-11-24T10:25:33+00:00",
   "last_run_at": "2026-11-23T10:32:05+00:00",
   "sources_scanned": 57,
   "sources_configured": 72,
   "errors": 18,
-  "message": "Scan failed. Review scheduled workflow logs."
+  "message": "Scheduled scan started; waiting for results."
 }
