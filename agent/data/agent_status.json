@@ -1,12 +1,12 @@
 {
   "format": "HOV-STATUS-1",
-  "state": "running",
-  "updated_at": "2026-11-26T10:27:38+00:00",
+  "state": "complete",
+  "updated_at": "2026-11-26T10:30:23+00:00",
   "started_at": "2026-11-26T10:27:38+00:00",
-  "finished_at": "2026-11-25T10:28:48+00:00",
-  "last_run_at": "2026-11-25T10:26:47+00:00",
-  "sources_scanned": 57,
+  "finished_at": "2026-11-26T10:30:23+00:00",
+  "last_run_at": "2026-11-26T10:27:48+00:00",
+  "sources_scanned": 53,
   "sources_configured": 72,
-  "errors": 19,
-  "message": "Scheduled scan started; waiting for results."
+  "errors": 22,
+  "message": "Scan completed; candidates require verification."
 }
